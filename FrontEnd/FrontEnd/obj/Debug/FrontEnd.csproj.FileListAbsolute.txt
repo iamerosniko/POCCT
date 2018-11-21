@@ -1,0 +1,9 @@
+C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\FrontEnd\bin\Debug\Call Tracker.exe.config
+C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\FrontEnd\bin\Debug\Call Tracker.exe
+C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\FrontEnd\bin\Debug\Call Tracker.pdb
+C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\FrontEnd\obj\Debug\FrontEnd.csprojAssemblyReference.cache
+C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\FrontEnd\obj\Debug\FrontEnd.Properties.Resources.resources
+C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\FrontEnd\obj\Debug\FrontEnd.csproj.GenerateResource.cache
+C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\FrontEnd\obj\Debug\FrontEnd.csproj.CoreCompileInputs.cache
+C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\FrontEnd\obj\Debug\Call Tracker.exe
+C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\FrontEnd\obj\Debug\Call Tracker.pdb
