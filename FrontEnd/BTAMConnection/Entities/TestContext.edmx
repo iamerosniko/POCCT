@@ -1,0 +1,643 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ABADIversityModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="__EFMigrationsHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+          </Key>
+          <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AD_Audit">
+          <Key>
+            <PropertyRef Name="AuditID" />
+          </Key>
+          <Property Name="AuditID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Action" Type="nvarchar(max)" />
+          <Property Name="DateModified" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="Module" Type="nvarchar(max)" />
+          <Property Name="Username" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="AD_Certificates">
+          <Key>
+            <PropertyRef Name="CertificateID" />
+          </Key>
+          <Property Name="CertificateID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CompanyProfileID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="DateCert" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="AD_CompanyProfiles">
+          <Key>
+            <PropertyRef Name="CompanyProfileID" />
+          </Key>
+          <Property Name="CompanyProfileID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Catown" Type="nvarchar(max)" />
+          <Property Name="Datecomp" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="FirmID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Firmcert" Type="nvarchar(max)" />
+          <Property Name="Firmhead" Type="nvarchar(max)" />
+          <Property Name="Firmname" Type="nvarchar(max)" />
+          <Property Name="Firmown" Type="nvarchar(max)" />
+          <Property Name="Sizecat" Type="nvarchar(max)" />
+          <Property Name="Srcemail" Type="nvarchar(max)" />
+          <Property Name="Srcname" Type="nvarchar(max)" />
+          <Property Name="Srctitle" Type="nvarchar(max)" />
+          <Property Name="Totalfw" Type="int" Nullable="false" />
+          <Property Name="Totalusfw" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AD_FirmDemographics">
+          <Key>
+            <PropertyRef Name="FirmDemographicID" />
+          </Key>
+          <Property Name="FirmDemographicID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Associates" Type="nvarchar(max)" />
+          <Property Name="CompanyProfileID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Counsel" Type="nvarchar(max)" />
+          <Property Name="EquityPartners" Type="nvarchar(max)" />
+          <Property Name="NonEquityPartners" Type="nvarchar(max)" />
+          <Property Name="OtherLawyers" Type="nvarchar(max)" />
+          <Property Name="RegionName" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="AD_Firms">
+          <Key>
+            <PropertyRef Name="FirmID" />
+          </Key>
+          <Property Name="FirmID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FirmName" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="AD_JoinedLawyers">
+          <Key>
+            <PropertyRef Name="JoinedLawyerID" />
+          </Key>
+          <Property Name="JoinedLawyerID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Associates" Type="nvarchar(max)" />
+          <Property Name="CompanyProfileID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Counsel" Type="nvarchar(max)" />
+          <Property Name="EquityPartners" Type="nvarchar(max)" />
+          <Property Name="NonEquityPartners" Type="nvarchar(max)" />
+          <Property Name="OtherLawyers" Type="nvarchar(max)" />
+          <Property Name="RegionName" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="AD_LeadershipDemographics">
+          <Key>
+            <PropertyRef Name="LeadershipDemographicID" />
+          </Key>
+          <Property Name="LeadershipDemographicID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CompanyProfileID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Disabled" Type="nvarchar(max)" />
+          <Property Name="LGBT" Type="nvarchar(max)" />
+          <Property Name="MinorityFemale" Type="nvarchar(max)" />
+          <Property Name="MinorityMale" Type="nvarchar(max)" />
+          <Property Name="NumberQuestion" Type="nvarchar(max)" />
+          <Property Name="WhiteFemale" Type="nvarchar(max)" />
+          <Property Name="WhiteMale" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="AD_LeftLawyers">
+          <Key>
+            <PropertyRef Name="LeftLawyerID" />
+          </Key>
+          <Property Name="LeftLawyerID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Associates" Type="nvarchar(max)" />
+          <Property Name="CompanyProfileID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Counsel" Type="nvarchar(max)" />
+          <Property Name="EquityPartners" Type="nvarchar(max)" />
+          <Property Name="NonEquityPartners" Type="nvarchar(max)" />
+          <Property Name="OtherLawyers" Type="nvarchar(max)" />
+          <Property Name="RegionName" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="AD_PromotionsAssociatePartners">
+          <Key>
+            <PropertyRef Name="PromotionsAssociatePartnerID" />
+          </Key>
+          <Property Name="PromotionsAssociatePartnerID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Associates" Type="nvarchar(max)" />
+          <Property Name="CompanyProfileID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Counsel" Type="nvarchar(max)" />
+          <Property Name="EquityPartners" Type="nvarchar(max)" />
+          <Property Name="NonEquityPartners" Type="nvarchar(max)" />
+          <Property Name="OtherLawyers" Type="nvarchar(max)" />
+          <Property Name="RegionName" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="AD_ReducedHoursLawyers">
+          <Key>
+            <PropertyRef Name="ReducedHoursLawyerID" />
+          </Key>
+          <Property Name="ReducedHoursLawyerID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Associates" Type="nvarchar(max)" />
+          <Property Name="CompanyProfileID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Counsel" Type="nvarchar(max)" />
+          <Property Name="EquityPartners" Type="nvarchar(max)" />
+          <Property Name="NonEquityPartners" Type="nvarchar(max)" />
+          <Property Name="OtherLawyers" Type="nvarchar(max)" />
+          <Property Name="RegionName" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="AD_TopTenHighestCompensations">
+          <Key>
+            <PropertyRef Name="TopTenHighestCompensationID" />
+          </Key>
+          <Property Name="TopTenHighestCompensationID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Associates" Type="nvarchar(max)" />
+          <Property Name="CompanyProfileID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Counsel" Type="nvarchar(max)" />
+          <Property Name="EquityPartners" Type="nvarchar(max)" />
+          <Property Name="NonEquityPartners" Type="nvarchar(max)" />
+          <Property Name="OtherLawyers" Type="nvarchar(max)" />
+          <Property Name="RegionName" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="AD_UntertakenInitiatives">
+          <Key>
+            <PropertyRef Name="UndertakenInitiativeID" />
+          </Key>
+          <Property Name="UndertakenInitiativeID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Answer1" Type="nvarchar(max)" />
+          <Property Name="Answer10" Type="nvarchar(max)" />
+          <Property Name="Answer11" Type="nvarchar(max)" />
+          <Property Name="Answer12" Type="nvarchar(max)" />
+          <Property Name="Answer13" Type="nvarchar(max)" />
+          <Property Name="Answer14" Type="nvarchar(max)" />
+          <Property Name="Answer15" Type="nvarchar(max)" />
+          <Property Name="Answer16" Type="nvarchar(max)" />
+          <Property Name="Answer17" Type="nvarchar(max)" />
+          <Property Name="Answer2" Type="nvarchar(max)" />
+          <Property Name="Answer3" Type="nvarchar(max)" />
+          <Property Name="Answer4" Type="nvarchar(max)" />
+          <Property Name="Answer5" Type="nvarchar(max)" />
+          <Property Name="Answer6" Type="nvarchar(max)" />
+          <Property Name="Answer7" Type="nvarchar(max)" />
+          <Property Name="Answer8" Type="nvarchar(max)" />
+          <Property Name="Answer9" Type="nvarchar(max)" />
+          <Property Name="Comment1" Type="nvarchar(max)" />
+          <Property Name="Comment10" Type="nvarchar(max)" />
+          <Property Name="Comment11" Type="nvarchar(max)" />
+          <Property Name="Comment12" Type="nvarchar(max)" />
+          <Property Name="Comment13" Type="nvarchar(max)" />
+          <Property Name="Comment14" Type="nvarchar(max)" />
+          <Property Name="Comment15" Type="nvarchar(max)" />
+          <Property Name="Comment16" Type="nvarchar(max)" />
+          <Property Name="Comment17" Type="nvarchar(max)" />
+          <Property Name="Comment2" Type="nvarchar(max)" />
+          <Property Name="Comment3" Type="nvarchar(max)" />
+          <Property Name="Comment4" Type="nvarchar(max)" />
+          <Property Name="Comment5" Type="nvarchar(max)" />
+          <Property Name="Comment6" Type="nvarchar(max)" />
+          <Property Name="Comment7" Type="nvarchar(max)" />
+          <Property Name="Comment8" Type="nvarchar(max)" />
+          <Property Name="Comment9" Type="nvarchar(max)" />
+          <Property Name="CompanyProfileID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="MainComment" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityContainer Name="ABADIversityModelStoreContainer">
+          <EntitySet Name="__EFMigrationsHistory" EntityType="Self.__EFMigrationsHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AD_Audit" EntityType="Self.AD_Audit" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AD_Certificates" EntityType="Self.AD_Certificates" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AD_CompanyProfiles" EntityType="Self.AD_CompanyProfiles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AD_FirmDemographics" EntityType="Self.AD_FirmDemographics" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AD_Firms" EntityType="Self.AD_Firms" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AD_JoinedLawyers" EntityType="Self.AD_JoinedLawyers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AD_LeadershipDemographics" EntityType="Self.AD_LeadershipDemographics" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AD_LeftLawyers" EntityType="Self.AD_LeftLawyers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AD_PromotionsAssociatePartners" EntityType="Self.AD_PromotionsAssociatePartners" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AD_ReducedHoursLawyers" EntityType="Self.AD_ReducedHoursLawyers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AD_TopTenHighestCompensations" EntityType="Self.AD_TopTenHighestCompensations" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AD_UntertakenInitiatives" EntityType="Self.AD_UntertakenInitiatives" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ABADIversityModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="C__EFMigrationsHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+          </Key>
+          <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AD_Audit">
+          <Key>
+            <PropertyRef Name="AuditID" />
+          </Key>
+          <Property Name="AuditID" Type="Guid" Nullable="false" />
+          <Property Name="Action" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DateModified" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="Module" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Username" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="AD_Certificates">
+          <Key>
+            <PropertyRef Name="CertificateID" />
+          </Key>
+          <Property Name="CertificateID" Type="Guid" Nullable="false" />
+          <Property Name="CompanyProfileID" Type="Guid" Nullable="false" />
+          <Property Name="DateCert" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="AD_CompanyProfiles">
+          <Key>
+            <PropertyRef Name="CompanyProfileID" />
+          </Key>
+          <Property Name="CompanyProfileID" Type="Guid" Nullable="false" />
+          <Property Name="Catown" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Datecomp" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="FirmID" Type="Guid" Nullable="false" />
+          <Property Name="Firmcert" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Firmhead" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Firmname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Firmown" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Sizecat" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Srcemail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Srcname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Srctitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Totalfw" Type="Int32" Nullable="false" />
+          <Property Name="Totalusfw" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AD_FirmDemographics">
+          <Key>
+            <PropertyRef Name="FirmDemographicID" />
+          </Key>
+          <Property Name="FirmDemographicID" Type="Guid" Nullable="false" />
+          <Property Name="Associates" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyProfileID" Type="Guid" Nullable="false" />
+          <Property Name="Counsel" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EquityPartners" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NonEquityPartners" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="OtherLawyers" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RegionName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="AD_Firms">
+          <Key>
+            <PropertyRef Name="FirmID" />
+          </Key>
+          <Property Name="FirmID" Type="Guid" Nullable="false" />
+          <Property Name="FirmName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="AD_JoinedLawyers">
+          <Key>
+            <PropertyRef Name="JoinedLawyerID" />
+          </Key>
+          <Property Name="JoinedLawyerID" Type="Guid" Nullable="false" />
+          <Property Name="Associates" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyProfileID" Type="Guid" Nullable="false" />
+          <Property Name="Counsel" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EquityPartners" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NonEquityPartners" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="OtherLawyers" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RegionName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="AD_LeadershipDemographics">
+          <Key>
+            <PropertyRef Name="LeadershipDemographicID" />
+          </Key>
+          <Property Name="LeadershipDemographicID" Type="Guid" Nullable="false" />
+          <Property Name="CompanyProfileID" Type="Guid" Nullable="false" />
+          <Property Name="Disabled" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LGBT" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MinorityFemale" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MinorityMale" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NumberQuestion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="WhiteFemale" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="WhiteMale" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="AD_LeftLawyers">
+          <Key>
+            <PropertyRef Name="LeftLawyerID" />
+          </Key>
+          <Property Name="LeftLawyerID" Type="Guid" Nullable="false" />
+          <Property Name="Associates" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyProfileID" Type="Guid" Nullable="false" />
+          <Property Name="Counsel" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EquityPartners" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NonEquityPartners" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="OtherLawyers" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RegionName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="AD_PromotionsAssociatePartners">
+          <Key>
+            <PropertyRef Name="PromotionsAssociatePartnerID" />
+          </Key>
+          <Property Name="PromotionsAssociatePartnerID" Type="Guid" Nullable="false" />
+          <Property Name="Associates" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyProfileID" Type="Guid" Nullable="false" />
+          <Property Name="Counsel" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EquityPartners" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NonEquityPartners" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="OtherLawyers" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RegionName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="AD_ReducedHoursLawyers">
+          <Key>
+            <PropertyRef Name="ReducedHoursLawyerID" />
+          </Key>
+          <Property Name="ReducedHoursLawyerID" Type="Guid" Nullable="false" />
+          <Property Name="Associates" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyProfileID" Type="Guid" Nullable="false" />
+          <Property Name="Counsel" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EquityPartners" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NonEquityPartners" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="OtherLawyers" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RegionName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="AD_TopTenHighestCompensations">
+          <Key>
+            <PropertyRef Name="TopTenHighestCompensationID" />
+          </Key>
+          <Property Name="TopTenHighestCompensationID" Type="Guid" Nullable="false" />
+          <Property Name="Associates" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyProfileID" Type="Guid" Nullable="false" />
+          <Property Name="Counsel" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EquityPartners" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NonEquityPartners" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="OtherLawyers" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RegionName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="AD_UntertakenInitiatives">
+          <Key>
+            <PropertyRef Name="UndertakenInitiativeID" />
+          </Key>
+          <Property Name="UndertakenInitiativeID" Type="Guid" Nullable="false" />
+          <Property Name="Answer1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Answer10" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Answer11" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Answer12" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Answer13" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Answer14" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Answer15" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Answer16" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Answer17" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Answer2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Answer3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Answer4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Answer5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Answer6" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Answer7" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Answer8" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Answer9" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Comment1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Comment10" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Comment11" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Comment12" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Comment13" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Comment14" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Comment15" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Comment16" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Comment17" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Comment2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Comment3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Comment4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Comment5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Comment6" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Comment7" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Comment8" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Comment9" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyProfileID" Type="Guid" Nullable="false" />
+          <Property Name="MainComment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="ABADIversityEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="C__EFMigrationsHistory" EntityType="Self.C__EFMigrationsHistory" />
+          <EntitySet Name="AD_Audit" EntityType="Self.AD_Audit" />
+          <EntitySet Name="AD_Certificates" EntityType="Self.AD_Certificates" />
+          <EntitySet Name="AD_CompanyProfiles" EntityType="Self.AD_CompanyProfiles" />
+          <EntitySet Name="AD_FirmDemographics" EntityType="Self.AD_FirmDemographics" />
+          <EntitySet Name="AD_Firms" EntityType="Self.AD_Firms" />
+          <EntitySet Name="AD_JoinedLawyers" EntityType="Self.AD_JoinedLawyers" />
+          <EntitySet Name="AD_LeadershipDemographics" EntityType="Self.AD_LeadershipDemographics" />
+          <EntitySet Name="AD_LeftLawyers" EntityType="Self.AD_LeftLawyers" />
+          <EntitySet Name="AD_PromotionsAssociatePartners" EntityType="Self.AD_PromotionsAssociatePartners" />
+          <EntitySet Name="AD_ReducedHoursLawyers" EntityType="Self.AD_ReducedHoursLawyers" />
+          <EntitySet Name="AD_TopTenHighestCompensations" EntityType="Self.AD_TopTenHighestCompensations" />
+          <EntitySet Name="AD_UntertakenInitiatives" EntityType="Self.AD_UntertakenInitiatives" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ABADIversityModelStoreContainer" CdmEntityContainer="ABADIversityEntities">
+          <EntitySetMapping Name="C__EFMigrationsHistory">
+            <EntityTypeMapping TypeName="ABADIversityModel.C__EFMigrationsHistory">
+              <MappingFragment StoreEntitySet="__EFMigrationsHistory">
+                <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+                <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AD_Audit">
+            <EntityTypeMapping TypeName="ABADIversityModel.AD_Audit">
+              <MappingFragment StoreEntitySet="AD_Audit">
+                <ScalarProperty Name="AuditID" ColumnName="AuditID" />
+                <ScalarProperty Name="Action" ColumnName="Action" />
+                <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+                <ScalarProperty Name="Module" ColumnName="Module" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AD_Certificates">
+            <EntityTypeMapping TypeName="ABADIversityModel.AD_Certificates">
+              <MappingFragment StoreEntitySet="AD_Certificates">
+                <ScalarProperty Name="CertificateID" ColumnName="CertificateID" />
+                <ScalarProperty Name="CompanyProfileID" ColumnName="CompanyProfileID" />
+                <ScalarProperty Name="DateCert" ColumnName="DateCert" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AD_CompanyProfiles">
+            <EntityTypeMapping TypeName="ABADIversityModel.AD_CompanyProfiles">
+              <MappingFragment StoreEntitySet="AD_CompanyProfiles">
+                <ScalarProperty Name="CompanyProfileID" ColumnName="CompanyProfileID" />
+                <ScalarProperty Name="Catown" ColumnName="Catown" />
+                <ScalarProperty Name="Datecomp" ColumnName="Datecomp" />
+                <ScalarProperty Name="FirmID" ColumnName="FirmID" />
+                <ScalarProperty Name="Firmcert" ColumnName="Firmcert" />
+                <ScalarProperty Name="Firmhead" ColumnName="Firmhead" />
+                <ScalarProperty Name="Firmname" ColumnName="Firmname" />
+                <ScalarProperty Name="Firmown" ColumnName="Firmown" />
+                <ScalarProperty Name="Sizecat" ColumnName="Sizecat" />
+                <ScalarProperty Name="Srcemail" ColumnName="Srcemail" />
+                <ScalarProperty Name="Srcname" ColumnName="Srcname" />
+                <ScalarProperty Name="Srctitle" ColumnName="Srctitle" />
+                <ScalarProperty Name="Totalfw" ColumnName="Totalfw" />
+                <ScalarProperty Name="Totalusfw" ColumnName="Totalusfw" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AD_FirmDemographics">
+            <EntityTypeMapping TypeName="ABADIversityModel.AD_FirmDemographics">
+              <MappingFragment StoreEntitySet="AD_FirmDemographics">
+                <ScalarProperty Name="FirmDemographicID" ColumnName="FirmDemographicID" />
+                <ScalarProperty Name="Associates" ColumnName="Associates" />
+                <ScalarProperty Name="CompanyProfileID" ColumnName="CompanyProfileID" />
+                <ScalarProperty Name="Counsel" ColumnName="Counsel" />
+                <ScalarProperty Name="EquityPartners" ColumnName="EquityPartners" />
+                <ScalarProperty Name="NonEquityPartners" ColumnName="NonEquityPartners" />
+                <ScalarProperty Name="OtherLawyers" ColumnName="OtherLawyers" />
+                <ScalarProperty Name="RegionName" ColumnName="RegionName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AD_Firms">
+            <EntityTypeMapping TypeName="ABADIversityModel.AD_Firms">
+              <MappingFragment StoreEntitySet="AD_Firms">
+                <ScalarProperty Name="FirmID" ColumnName="FirmID" />
+                <ScalarProperty Name="FirmName" ColumnName="FirmName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AD_JoinedLawyers">
+            <EntityTypeMapping TypeName="ABADIversityModel.AD_JoinedLawyers">
+              <MappingFragment StoreEntitySet="AD_JoinedLawyers">
+                <ScalarProperty Name="JoinedLawyerID" ColumnName="JoinedLawyerID" />
+                <ScalarProperty Name="Associates" ColumnName="Associates" />
+                <ScalarProperty Name="CompanyProfileID" ColumnName="CompanyProfileID" />
+                <ScalarProperty Name="Counsel" ColumnName="Counsel" />
+                <ScalarProperty Name="EquityPartners" ColumnName="EquityPartners" />
+                <ScalarProperty Name="NonEquityPartners" ColumnName="NonEquityPartners" />
+                <ScalarProperty Name="OtherLawyers" ColumnName="OtherLawyers" />
+                <ScalarProperty Name="RegionName" ColumnName="RegionName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AD_LeadershipDemographics">
+            <EntityTypeMapping TypeName="ABADIversityModel.AD_LeadershipDemographics">
+              <MappingFragment StoreEntitySet="AD_LeadershipDemographics">
+                <ScalarProperty Name="LeadershipDemographicID" ColumnName="LeadershipDemographicID" />
+                <ScalarProperty Name="CompanyProfileID" ColumnName="CompanyProfileID" />
+                <ScalarProperty Name="Disabled" ColumnName="Disabled" />
+                <ScalarProperty Name="LGBT" ColumnName="LGBT" />
+                <ScalarProperty Name="MinorityFemale" ColumnName="MinorityFemale" />
+                <ScalarProperty Name="MinorityMale" ColumnName="MinorityMale" />
+                <ScalarProperty Name="NumberQuestion" ColumnName="NumberQuestion" />
+                <ScalarProperty Name="WhiteFemale" ColumnName="WhiteFemale" />
+                <ScalarProperty Name="WhiteMale" ColumnName="WhiteMale" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AD_LeftLawyers">
+            <EntityTypeMapping TypeName="ABADIversityModel.AD_LeftLawyers">
+              <MappingFragment StoreEntitySet="AD_LeftLawyers">
+                <ScalarProperty Name="LeftLawyerID" ColumnName="LeftLawyerID" />
+                <ScalarProperty Name="Associates" ColumnName="Associates" />
+                <ScalarProperty Name="CompanyProfileID" ColumnName="CompanyProfileID" />
+                <ScalarProperty Name="Counsel" ColumnName="Counsel" />
+                <ScalarProperty Name="EquityPartners" ColumnName="EquityPartners" />
+                <ScalarProperty Name="NonEquityPartners" ColumnName="NonEquityPartners" />
+                <ScalarProperty Name="OtherLawyers" ColumnName="OtherLawyers" />
+                <ScalarProperty Name="RegionName" ColumnName="RegionName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AD_PromotionsAssociatePartners">
+            <EntityTypeMapping TypeName="ABADIversityModel.AD_PromotionsAssociatePartners">
+              <MappingFragment StoreEntitySet="AD_PromotionsAssociatePartners">
+                <ScalarProperty Name="PromotionsAssociatePartnerID" ColumnName="PromotionsAssociatePartnerID" />
+                <ScalarProperty Name="Associates" ColumnName="Associates" />
+                <ScalarProperty Name="CompanyProfileID" ColumnName="CompanyProfileID" />
+                <ScalarProperty Name="Counsel" ColumnName="Counsel" />
+                <ScalarProperty Name="EquityPartners" ColumnName="EquityPartners" />
+                <ScalarProperty Name="NonEquityPartners" ColumnName="NonEquityPartners" />
+                <ScalarProperty Name="OtherLawyers" ColumnName="OtherLawyers" />
+                <ScalarProperty Name="RegionName" ColumnName="RegionName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AD_ReducedHoursLawyers">
+            <EntityTypeMapping TypeName="ABADIversityModel.AD_ReducedHoursLawyers">
+              <MappingFragment StoreEntitySet="AD_ReducedHoursLawyers">
+                <ScalarProperty Name="ReducedHoursLawyerID" ColumnName="ReducedHoursLawyerID" />
+                <ScalarProperty Name="Associates" ColumnName="Associates" />
+                <ScalarProperty Name="CompanyProfileID" ColumnName="CompanyProfileID" />
+                <ScalarProperty Name="Counsel" ColumnName="Counsel" />
+                <ScalarProperty Name="EquityPartners" ColumnName="EquityPartners" />
+                <ScalarProperty Name="NonEquityPartners" ColumnName="NonEquityPartners" />
+                <ScalarProperty Name="OtherLawyers" ColumnName="OtherLawyers" />
+                <ScalarProperty Name="RegionName" ColumnName="RegionName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AD_TopTenHighestCompensations">
+            <EntityTypeMapping TypeName="ABADIversityModel.AD_TopTenHighestCompensations">
+              <MappingFragment StoreEntitySet="AD_TopTenHighestCompensations">
+                <ScalarProperty Name="TopTenHighestCompensationID" ColumnName="TopTenHighestCompensationID" />
+                <ScalarProperty Name="Associates" ColumnName="Associates" />
+                <ScalarProperty Name="CompanyProfileID" ColumnName="CompanyProfileID" />
+                <ScalarProperty Name="Counsel" ColumnName="Counsel" />
+                <ScalarProperty Name="EquityPartners" ColumnName="EquityPartners" />
+                <ScalarProperty Name="NonEquityPartners" ColumnName="NonEquityPartners" />
+                <ScalarProperty Name="OtherLawyers" ColumnName="OtherLawyers" />
+                <ScalarProperty Name="RegionName" ColumnName="RegionName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AD_UntertakenInitiatives">
+            <EntityTypeMapping TypeName="ABADIversityModel.AD_UntertakenInitiatives">
+              <MappingFragment StoreEntitySet="AD_UntertakenInitiatives">
+                <ScalarProperty Name="UndertakenInitiativeID" ColumnName="UndertakenInitiativeID" />
+                <ScalarProperty Name="Answer1" ColumnName="Answer1" />
+                <ScalarProperty Name="Answer10" ColumnName="Answer10" />
+                <ScalarProperty Name="Answer11" ColumnName="Answer11" />
+                <ScalarProperty Name="Answer12" ColumnName="Answer12" />
+                <ScalarProperty Name="Answer13" ColumnName="Answer13" />
+                <ScalarProperty Name="Answer14" ColumnName="Answer14" />
+                <ScalarProperty Name="Answer15" ColumnName="Answer15" />
+                <ScalarProperty Name="Answer16" ColumnName="Answer16" />
+                <ScalarProperty Name="Answer17" ColumnName="Answer17" />
+                <ScalarProperty Name="Answer2" ColumnName="Answer2" />
+                <ScalarProperty Name="Answer3" ColumnName="Answer3" />
+                <ScalarProperty Name="Answer4" ColumnName="Answer4" />
+                <ScalarProperty Name="Answer5" ColumnName="Answer5" />
+                <ScalarProperty Name="Answer6" ColumnName="Answer6" />
+                <ScalarProperty Name="Answer7" ColumnName="Answer7" />
+                <ScalarProperty Name="Answer8" ColumnName="Answer8" />
+                <ScalarProperty Name="Answer9" ColumnName="Answer9" />
+                <ScalarProperty Name="Comment1" ColumnName="Comment1" />
+                <ScalarProperty Name="Comment10" ColumnName="Comment10" />
+                <ScalarProperty Name="Comment11" ColumnName="Comment11" />
+                <ScalarProperty Name="Comment12" ColumnName="Comment12" />
+                <ScalarProperty Name="Comment13" ColumnName="Comment13" />
+                <ScalarProperty Name="Comment14" ColumnName="Comment14" />
+                <ScalarProperty Name="Comment15" ColumnName="Comment15" />
+                <ScalarProperty Name="Comment16" ColumnName="Comment16" />
+                <ScalarProperty Name="Comment17" ColumnName="Comment17" />
+                <ScalarProperty Name="Comment2" ColumnName="Comment2" />
+                <ScalarProperty Name="Comment3" ColumnName="Comment3" />
+                <ScalarProperty Name="Comment4" ColumnName="Comment4" />
+                <ScalarProperty Name="Comment5" ColumnName="Comment5" />
+                <ScalarProperty Name="Comment6" ColumnName="Comment6" />
+                <ScalarProperty Name="Comment7" ColumnName="Comment7" />
+                <ScalarProperty Name="Comment8" ColumnName="Comment8" />
+                <ScalarProperty Name="Comment9" ColumnName="Comment9" />
+                <ScalarProperty Name="CompanyProfileID" ColumnName="CompanyProfileID" />
+                <ScalarProperty Name="MainComment" ColumnName="MainComment" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
