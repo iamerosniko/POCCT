@@ -1,0 +1,1 @@
+﻿https://btaccessmanagementbw-dev.azurewebsites.net/api/SingleSignIn/

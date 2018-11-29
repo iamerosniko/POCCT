@@ -7,3 +7,23 @@ C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\FrontEnd\obj\Debug\FrontEnd.csp
 C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\FrontEnd\obj\Debug\FrontEnd.csproj.CoreCompileInputs.cache
 C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\FrontEnd\obj\Debug\Call Tracker.exe
 C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\FrontEnd\obj\Debug\Call Tracker.pdb
+C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\FrontEnd\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\FrontEnd\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\FrontEnd\bin\Debug\Newtonsoft.Json.dll
+C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\FrontEnd\bin\Debug\Microsoft.IdentityModel.Logging.dll
+C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\FrontEnd\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\FrontEnd\bin\Debug\BTAMConnection.pdb
+C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\FrontEnd\bin\Debug\BTAMConnection.dll.config
+C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\FrontEnd\bin\Debug\System.IdentityModel.Tokens.Jwt.pdb
+C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\FrontEnd\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\FrontEnd\bin\Debug\Microsoft.IdentityModel.Tokens.pdb
+C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\FrontEnd\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\FrontEnd\bin\Debug\Newtonsoft.Json.xml
+C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\FrontEnd\bin\Debug\Microsoft.IdentityModel.Logging.pdb
+C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\FrontEnd\bin\Debug\Microsoft.IdentityModel.Logging.xml
+C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\FrontEnd\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.pdb
+C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\FrontEnd\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.xml
+C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\FrontEnd\obj\Debug\FrontEnd.csproj.CopyComplete
+C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\FrontEnd\bin\Debug\BTAMConnection.txt
+C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\FrontEnd\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\FrontEnd\obj\Debug\FrontEnd.Main.resources
