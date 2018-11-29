@@ -51,10 +51,54 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\BTAMDriver.cs" />
+    <Compile Include="Entities\AD_Audit.cs">
+      <DependentUpon>TestContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\AD_Certificates.cs">
+      <DependentUpon>TestContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\AD_CompanyProfiles.cs">
+      <DependentUpon>TestContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\AD_FirmDemographics.cs">
+      <DependentUpon>TestContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\AD_Firms.cs">
+      <DependentUpon>TestContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\AD_JoinedLawyers.cs">
+      <DependentUpon>TestContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\AD_LeadershipDemographics.cs">
+      <DependentUpon>TestContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\AD_LeftLawyers.cs">
+      <DependentUpon>TestContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\AD_PromotionsAssociatePartners.cs">
+      <DependentUpon>TestContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\AD_ReducedHoursLawyers.cs">
+      <DependentUpon>TestContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\AD_TopTenHighestCompensations.cs">
+      <DependentUpon>TestContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\AD_UntertakenInitiatives.cs">
+      <DependentUpon>TestContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\C__EFMigrationsHistory.cs">
+      <DependentUpon>TestContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entities\TestContext.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TestContext.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TestContext.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TestContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\TestContext.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -81,6 +125,12 @@
     <Content Include="Entities\TestContext.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>TestContext.Context.cs</LastGenOutput>
+      <DependentUpon>TestContext.edmx</DependentUpon>
+    </Content>
+    <Content Include="Entities\TestContext.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TestContext.edmx</DependentUpon>
+      <LastGenOutput>TestContext.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>
