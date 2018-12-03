@@ -37,11 +37,20 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\BTAMConnection\bin\Debug\BTAMConnection.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -54,6 +63,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\Services\APIAccess.cs" />
+    <Compile Include="CTD_CallCategories.cs">
+      <DependentUpon>Test.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CTD_CallerAssocs.cs">
+      <DependentUpon>Test.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CTD_Calls.cs">
+      <DependentUpon>Test.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CTD_CallStatuses.cs">
+      <DependentUpon>Test.tt</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +83,30 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="set_group.cs">
+      <DependentUpon>Test.tt</DependentUpon>
+    </Compile>
+    <Compile Include="set_module.cs">
+      <DependentUpon>Test.tt</DependentUpon>
+    </Compile>
+    <Compile Include="set_user.cs">
+      <DependentUpon>Test.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Test.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Test.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Test.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Test.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Test.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Test.edmx</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -84,6 +129,13 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EntityDeploy Include="Test.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Test.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Test.edmx.diagram">
+      <DependentUpon>Test.edmx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -92,9 +144,22 @@
     <Content Include="BTAMConnection.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Test.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Test.Context.cs</LastGenOutput>
+      <DependentUpon>Test.edmx</DependentUpon>
+    </Content>
+    <Content Include="Test.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Test.edmx</DependentUpon>
+      <LastGenOutput>Test.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Entities\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
