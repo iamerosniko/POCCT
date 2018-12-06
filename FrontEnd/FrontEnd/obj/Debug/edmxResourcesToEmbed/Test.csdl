@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbbtCalTModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CTD_CallCategories">
+    <Key>
+      <PropertyRef Name="CallCategoryID" />
+    </Key>
+    <Property Name="CallCategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CallCategoryDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="CTD_Calls" Relationship="Self.FK_CTD_Calls_CTD_CallCategories" FromRole="CTD_CallCategories" ToRole="CTD_Calls" />
+  </EntityType>
+  <EntityType Name="CTD_CallerAssocs">
+    <Key>
+      <PropertyRef Name="CallerAssocID" />
+    </Key>
+    <Property Name="CallerAssocID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CallerAssocDesc" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="CTD_Calls" Relationship="Self.FK_CTD_Calls_CTD_CallerAssocs" FromRole="CTD_CallerAssocs" ToRole="CTD_Calls" />
+  </EntityType>
+  <EntityType Name="CTD_Calls">
+    <Key>
+      <PropertyRef Name="CallID" />
+    </Key>
+    <Property Name="CallID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CallerPhone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CallerAssocID" Type="Int32" Nullable="false" />
+    <Property Name="user_name" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DateOfCall" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CallStatusID" Type="Int32" Nullable="false" />
+    <Property Name="CallCategoryID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="CTD_CallCategories" Relationship="Self.FK_CTD_Calls_CTD_CallCategories" FromRole="CTD_Calls" ToRole="CTD_CallCategories" />
+    <NavigationProperty Name="CTD_CallerAssocs" Relationship="Self.FK_CTD_Calls_CTD_CallerAssocs" FromRole="CTD_Calls" ToRole="CTD_CallerAssocs" />
+    <NavigationProperty Name="CTD_CallStatuses" Relationship="Self.FK_CTD_Calls_CTD_CallStatuses" FromRole="CTD_Calls" ToRole="CTD_CallStatuses" />
+    <NavigationProperty Name="set_user" Relationship="Self.FK_CTD_Calls_set_user1" FromRole="CTD_Calls" ToRole="set_user" />
+  </EntityType>
+  <EntityType Name="CTD_CallStatuses">
+    <Key>
+      <PropertyRef Name="CallStatusID" />
+    </Key>
+    <Property Name="CallStatusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CallStatusDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="CTD_Calls" Relationship="Self.FK_CTD_Calls_CTD_CallStatuses" FromRole="CTD_CallStatuses" ToRole="CTD_Calls" />
+  </EntityType>
+  <EntityType Name="set_group">
+    <Key>
+      <PropertyRef Name="grp_id" />
+    </Key>
+    <Property Name="grp_id" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="grp_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="grp_desc" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="created_date" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="set_module">
+    <Key>
+      <PropertyRef Name="mod_id" />
+    </Key>
+    <Property Name="mod_id" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="mod_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mod_desc" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="created_date" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="set_user">
+    <Key>
+      <PropertyRef Name="user_name" />
+    </Key>
+    <Property Name="user_id" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="user_name" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="user_last_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="user_first_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="user_middle_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="can_PROD" Type="Boolean" />
+    <Property Name="can_UAT" Type="Boolean" />
+    <Property Name="can_PEER" Type="Boolean" />
+    <Property Name="can_DEV" Type="Boolean" />
+    <Property Name="created_date" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="CTD_Calls" Relationship="Self.FK_CTD_Calls_set_user1" FromRole="set_user" ToRole="CTD_Calls" />
+  </EntityType>
+  <Association Name="FK_CTD_Calls_CTD_CallCategories">
+    <End Role="CTD_CallCategories" Type="Self.CTD_CallCategories" Multiplicity="1" />
+    <End Role="CTD_Calls" Type="Self.CTD_Calls" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CTD_CallCategories">
+        <PropertyRef Name="CallCategoryID" />
+      </Principal>
+      <Dependent Role="CTD_Calls">
+        <PropertyRef Name="CallCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CTD_Calls_CTD_CallerAssocs">
+    <End Role="CTD_CallerAssocs" Type="Self.CTD_CallerAssocs" Multiplicity="1" />
+    <End Role="CTD_Calls" Type="Self.CTD_Calls" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CTD_CallerAssocs">
+        <PropertyRef Name="CallerAssocID" />
+      </Principal>
+      <Dependent Role="CTD_Calls">
+        <PropertyRef Name="CallerAssocID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CTD_Calls_CTD_CallStatuses">
+    <End Role="CTD_CallStatuses" Type="Self.CTD_CallStatuses" Multiplicity="1" />
+    <End Role="CTD_Calls" Type="Self.CTD_Calls" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CTD_CallStatuses">
+        <PropertyRef Name="CallStatusID" />
+      </Principal>
+      <Dependent Role="CTD_Calls">
+        <PropertyRef Name="CallStatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CTD_Calls_set_user1">
+    <End Role="set_user" Type="Self.set_user" Multiplicity="1" />
+    <End Role="CTD_Calls" Type="Self.CTD_Calls" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="set_user">
+        <PropertyRef Name="user_name" />
+      </Principal>
+      <Dependent Role="CTD_Calls">
+        <PropertyRef Name="user_name" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="dbbtCalTEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CTD_CallCategories" EntityType="Self.CTD_CallCategories" />
+    <EntitySet Name="CTD_CallerAssocs" EntityType="Self.CTD_CallerAssocs" />
+    <EntitySet Name="CTD_Calls" EntityType="Self.CTD_Calls" />
+    <EntitySet Name="CTD_CallStatuses" EntityType="Self.CTD_CallStatuses" />
+    <EntitySet Name="set_group" EntityType="Self.set_group" />
+    <EntitySet Name="set_module" EntityType="Self.set_module" />
+    <EntitySet Name="set_user" EntityType="Self.set_user" />
+    <AssociationSet Name="FK_CTD_Calls_CTD_CallCategories" Association="Self.FK_CTD_Calls_CTD_CallCategories">
+      <End Role="CTD_CallCategories" EntitySet="CTD_CallCategories" />
+      <End Role="CTD_Calls" EntitySet="CTD_Calls" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CTD_Calls_CTD_CallerAssocs" Association="Self.FK_CTD_Calls_CTD_CallerAssocs">
+      <End Role="CTD_CallerAssocs" EntitySet="CTD_CallerAssocs" />
+      <End Role="CTD_Calls" EntitySet="CTD_Calls" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CTD_Calls_CTD_CallStatuses" Association="Self.FK_CTD_Calls_CTD_CallStatuses">
+      <End Role="CTD_CallStatuses" EntitySet="CTD_CallStatuses" />
+      <End Role="CTD_Calls" EntitySet="CTD_Calls" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CTD_Calls_set_user1" Association="Self.FK_CTD_Calls_set_user1">
+      <End Role="set_user" EntitySet="set_user" />
+      <End Role="CTD_Calls" EntitySet="CTD_Calls" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

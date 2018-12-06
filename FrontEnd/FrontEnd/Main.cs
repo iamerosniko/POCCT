@@ -7,6 +7,7 @@ namespace FrontEnd
     public partial class Main : Form
     {
         public string AUTHORIZATIONTOKEN;
+
         public Main()
         {
             InitializeComponent();
@@ -50,6 +51,9 @@ namespace FrontEnd
             }
             //MessageBox.Show("Welcome!\n" + user.FirstName + " " + user.LastName + ".\nYour Details for this app is: \nROLE:" + user.Role);
             this.Text = "Welcome " + user.FirstName + " " + user.LastName + "! (" + user.Role + ")";
+
+
+
         }
     }
 }
