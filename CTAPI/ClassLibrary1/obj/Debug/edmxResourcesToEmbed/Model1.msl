@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="dbbtCalTModelStoreContainer" CdmEntityContainer="dbbtCalTEntities">
+    <EntitySetMapping Name="CTD_CallCategories">
+      <EntityTypeMapping TypeName="dbbtCalTModel.CTD_CallCategories">
+        <MappingFragment StoreEntitySet="CTD_CallCategories">
+          <ScalarProperty Name="CallCategoryID" ColumnName="CallCategoryID" />
+          <ScalarProperty Name="CallCategoryDesc" ColumnName="CallCategoryDesc" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

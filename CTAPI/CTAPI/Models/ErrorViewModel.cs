@@ -1,6 +1,4 @@
-using System;
-
-namespace CTAPI.Models
+﻿namespace CTAPI.Models
 {
     public class ErrorViewModel
     {
