@@ -1,21 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CTAPI.Models
 {
-    public partial class CtdCalls
+    [Table("CTD_Calls")]
+    public class CtdCalls
     {
-        public int CallId { get; set; }
-        public string CallerPhone { get; set; }
-        public int CallerAssocId { get; set; }
-        public string UserName { get; set; }
-        public DateTime DateOfCall { get; set; }
-        public int CallStatusId { get; set; }
-        public int CallCategoryId { get; set; }
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 
-        public CtdCallCategories CallCategory { get; set; }
-        public CtdCallStatuses CallStatus { get; set; }
-        public CtdCallerAssocs CallerAssoc { get; set; }
-        public SetUser UserNameNavigation { get; set; }
+        public int CallID { get; set; }
+        public string CallerPhone { get; set; }
+        public int CallerAssocID { get; set; }
+        public string user_name { get; set; }
+        public DateTime DateOfCall { get; set; }
+        public int CallStatusID { get; set; }
+        public int CallCategoryID { get; set; }
+
     }
 }

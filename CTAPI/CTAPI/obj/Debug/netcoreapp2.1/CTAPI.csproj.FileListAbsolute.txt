@@ -30,3 +30,4 @@ C:\Users\alverer\Documents\GitHub\POCCT\CTAPI\CTAPI\obj\Debug\netcoreapp2.1\CTAP
 C:\Users\alverer\Documents\GitHub\POCCT\CTAPI\CTAPI\obj\Debug\netcoreapp2.1\CTAPI.pdb
 C:\Users\alverer\Documents\GitHub\POCCT\CTAPI\CTAPI\obj\Debug\netcoreapp2.1\CTAPI.csproj.CopyComplete
 C:\Users\alverer\Documents\GitHub\POCCT\CTAPI\CTAPI\obj\Debug\netcoreapp2.1\CTAPI.csprojAssemblyReference.cache
+C:\Users\alverer\Documents\GitHub\POCCT\CTAPI\CTAPI\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs

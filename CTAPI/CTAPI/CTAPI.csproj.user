@@ -11,5 +11,6 @@
     <WebStackScaffolding_DbContextTypeFullName>CTAPI.Models.dbbtCalTContext</WebStackScaffolding_DbContextTypeFullName>
     <WebStackScaffolding_IsAsyncSelected>False</WebStackScaffolding_IsAsyncSelected>
     <ShowAllFiles>true</ShowAllFiles>
+    <NameOfLastUsedPublishProfile>CTAPI20181220064453 - Web Deploy</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>

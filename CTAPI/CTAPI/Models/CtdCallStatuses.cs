@@ -1,19 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CTAPI.Models
 {
+    [Table("CTD_CallStatuses")]
     public partial class CtdCallStatuses
     {
-        public CtdCallStatuses()
-        {
-            CtdCalls = new HashSet<CtdCalls>();
-        }
-
-        public int CallStatusId { get; set; }
+        [Key]
+        public int CallStatusID { get; set; }
         public string CallStatusDesc { get; set; }
         public bool? Active { get; set; }
-
-        public ICollection<CtdCalls> CtdCalls { get; set; }
     }
 }
