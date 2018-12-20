@@ -55,7 +55,8 @@ namespace FrontEnd
 
 
             CallsController calls = new CallsController();
-            var a = await calls.Get();
+            var CallList = await calls.Get();
+            GridCalls.DataSource = CallList;
         }
     }
 }
