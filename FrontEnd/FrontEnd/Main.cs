@@ -1,4 +1,5 @@
-﻿using BTAMConnection.Controller;
+﻿using BackendConnector.Controllers;
+using BTAMConnection.Controller;
 using BTAMConnection.Entities;
 using System;
 using System.Windows.Forms;
@@ -53,7 +54,8 @@ namespace FrontEnd
             this.Text = "Welcome " + user.FirstName + " " + user.LastName + "! (" + user.Role + ")";
 
 
-
+            CallsController calls = new CallsController();
+            var a = await calls.Get();
         }
     }
 }
