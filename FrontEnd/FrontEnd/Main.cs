@@ -54,9 +54,20 @@ namespace FrontEnd
             this.Text = "Welcome " + user.FirstName + " " + user.LastName + "! (" + user.Role + ")";
 
 
-            CallsController calls = new CallsController();
-            var CallList = await calls.Get();
+            CallsController callsController = new CallsController();
+            CallCategoriesController callCategoriesController = new CallCategoriesController();
+            CallStatusesController callStatusesController = new CallStatusesController();
+            CallerAssocsController callerAssocsController = new CallerAssocsController();
+
+            var CallList = await callsController.Get();
+            var CallCategList = await callCategoriesController.Get();
+            var CallerAssocList = await callerAssocsController.Get();
+            var CallStatusList = await callStatusesController.Get();
+
             GridCalls.DataSource = CallList;
+            GridCallerAssocs.DataSource = CallerAssocList;
+            GridCallCategories.DataSource = CallCategList;
+            GridCallStatuses.DataSource = CallStatusList;
         }
     }
 }

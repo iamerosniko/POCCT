@@ -32,8 +32,4 @@ C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\FrontEnd\bin\Debug\EntityFramew
 C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\FrontEnd\bin\Debug\EntityFramework.xml
 C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\FrontEnd\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\FrontEnd\bin\Debug\BTAMConnection.dll
-C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\FrontEnd\bin\Debug\targetfile.txt
-C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\FrontEnd\bin\Debug\appsettings.Development.json
-C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\FrontEnd\bin\Debug\appsettings.Production.json
-C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\FrontEnd\bin\Debug\BackendConnector.dll
 C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\FrontEnd\bin\Debug\BackendConnector.pdb

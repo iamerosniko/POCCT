@@ -2,7 +2,7 @@
 
 namespace CTAPI.Models
 {
-    public partial class dbbtCalTContext : DbContext
+    public class dbbtCalTContext : DbContext
     {
         public dbbtCalTContext(DbContextOptions<dbbtCalTContext> options) : base(options)
         {

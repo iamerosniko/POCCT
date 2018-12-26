@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace CTAPI.Models
 {
     [Table("CTD_CallerAssocs")]
-    public partial class CtdCallerAssocs
+    public class CtdCallerAssocs
     {
         [Key]
         public int CallerAssocID { get; set; }

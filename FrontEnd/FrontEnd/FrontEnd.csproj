@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BackendConnector, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\BackendConnector\bin\Debug\BackendConnector.dll</HintPath>
+    </Reference>
     <Reference Include="BTAMConnection, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\BTAMConnection\bin\Debug\BTAMConnection.dll</HintPath>
@@ -110,12 +114,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BackendConnector\BackendConnector.csproj">
-      <Project>{2F740A9F-E548-4449-9C72-1BDD899DE794}</Project>
-      <Name>BackendConnector</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -49,7 +49,10 @@
     <Compile Include="Controllers\CallerAssocsController.cs" />
     <Compile Include="Controllers\CallsController.cs" />
     <Compile Include="Controllers\CallStatusesController.cs" />
+    <Compile Include="Entities\CtdCallCategories.cs" />
+    <Compile Include="Entities\CtdCallerAssocs.cs" />
     <Compile Include="Entities\CtdCalls.cs" />
+    <Compile Include="Entities\CtdCallStatuses.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\APIAccess.cs" />
   </ItemGroup>
