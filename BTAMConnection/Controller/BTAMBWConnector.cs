@@ -25,7 +25,7 @@ namespace BTAMConnection.Controller
 
         public async Task<CurrentUser> GetAppSignIn(AppSignIn appSignIn)
         {
-            _apiAccess = new APIAccess("AppSignIn", getApiUrl());
+            _apiAccess = new APIAccess("AppSignIn2", getApiUrl());
             var body = JsonConvert.SerializeObject(appSignIn);
             var result = await _apiAccess.PostRequest(body);
             CurrentUser user = JsonConvert.DeserializeObject<CurrentUser>(result);

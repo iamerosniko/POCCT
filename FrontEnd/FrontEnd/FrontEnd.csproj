@@ -105,6 +105,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BackendConnector.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="BTAMConnection.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="BTAMConnection.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

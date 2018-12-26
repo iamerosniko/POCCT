@@ -12,8 +12,6 @@ C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\FrontEnd\bin\Debug\Microsoft.Id
 C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\FrontEnd\bin\Debug\Newtonsoft.Json.dll
 C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\FrontEnd\bin\Debug\Microsoft.IdentityModel.Logging.dll
 C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\FrontEnd\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.dll
-C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\FrontEnd\bin\Debug\BTAMConnection.pdb
-C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\FrontEnd\bin\Debug\BTAMConnection.dll.config
 C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\FrontEnd\bin\Debug\System.IdentityModel.Tokens.Jwt.pdb
 C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\FrontEnd\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
 C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\FrontEnd\bin\Debug\Microsoft.IdentityModel.Tokens.pdb
@@ -32,4 +30,4 @@ C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\FrontEnd\bin\Debug\EntityFramew
 C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\FrontEnd\bin\Debug\EntityFramework.xml
 C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\FrontEnd\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\FrontEnd\bin\Debug\BTAMConnection.dll
-C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\FrontEnd\bin\Debug\BackendConnector.pdb
+C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\FrontEnd\bin\Debug\BackendConnector.dll
