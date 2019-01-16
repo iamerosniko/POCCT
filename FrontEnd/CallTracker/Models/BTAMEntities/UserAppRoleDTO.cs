@@ -11,6 +11,8 @@ namespace CallTracker.Models.BTAMEntities
         public string LastName { get; set; }
         public int RoleID { get; set; }
         public string Role { get; set; }
-        public List<ServiceDTO> services { get; set; }
+        public List<ServiceDTO> Services { get; set; }
+        public string AuthenticationToken { get; set; }
+        public string AuthorizationToken { get; set; }
     }
 }

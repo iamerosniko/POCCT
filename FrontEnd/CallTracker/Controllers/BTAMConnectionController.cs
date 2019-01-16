@@ -21,14 +21,62 @@ namespace CallTracker.Controllers
         private TokenFactory _tokenFactory;
 
         #region API
-        [HttpGet("GetBTAMURL")]
+        [Route("GetUsers")]
+        [HttpPost]
+        public async Task<List<UserAppRoleDTO>> GetUsers([FromBody] AM_AppSignIn appSignIn)
+        {
+            APIAccess apiAccess = new APIAccess("GetUsersInApp", Get().BTAMURL);
+            var body = JsonConvert.SerializeObject(appSignIn);
+            var result = await apiAccess.PostRequest(body);
+            var users = result == null ? new List<UserAppRoleDTO>() : JsonConvert.DeserializeObject<List<UserAppRoleDTO>>(result);
+            return users;
+        }
+
+        [Route("AppSignIn")]
+        [HttpGet]
+        public async Task<UserAppRoleDTO> AppSignIn()
+        {
+            APIAccess apiAccess = new APIAccess("AppSignIn2", Get().BTAMURL);
+
+            AM_AppSignIn si = new AM_AppSignIn
+            {
+                AppURL = Startup.Configuration["Internal:HostName"],
+                UserName = GetSignInUsername().UserName
+            };
+
+            var body = JsonConvert.SerializeObject(si);
+            var result = await apiAccess.PostRequest(body);
+            var currentUser = result == null ? new UserAppRoleDTO() : JsonConvert.DeserializeObject<UserAppRoleDTO>(result);
+
+            if (currentUser != new UserAppRoleDTO())
+            {
+                apiAccess = new APIAccess("Authenticate/" + Startup.Configuration["Internal:AppSecurityKey"], Get().BTAMURL);
+                body = JsonConvert.SerializeObject(currentUser);
+                result = await apiAccess.PostRequest(body);
+
+                var authenticationToken = result != null ? JsonConvert.DeserializeObject<AppToken>(result) : new AppToken();
+                currentUser.AuthenticationToken = authenticationToken.Token;
+                currentUser.AuthorizationToken = GetAuthorizationToken(authenticationToken).Token;
+            }
+            else
+            {
+
+            }
+
+
+            return currentUser;
+        }
+
+        #endregion
+        #region APIHELPER
+        //[HttpGet("GetBTAMURL")]
         public BTAMEntity Get()
         {
             return new BTAMEntity { BTAMURL = Startup.Configuration["BTAMURL"] };
         }
 
-        [Route("GetUserName")]
-        [HttpGet]
+        //[Route("GetUserName")]
+        //[HttpGet]
         public CurrentUser GetSignInUsername()
         {
             var username = this.User.Identity.Name;
@@ -39,8 +87,8 @@ namespace CallTracker.Controllers
             };
         }
 
-        [Route("GetAuthorizationUser")]
-        [HttpPost]
+        //[Route("GetAuthorizationUser")]
+        //[HttpPost]
         //public async Task<AppToken> GetAuthorizationToken([FromBody] string authenticationtoken)
         public AppToken GetAuthorizationToken([FromBody] AppToken authenticationToken)
         {
@@ -62,17 +110,6 @@ namespace CallTracker.Controllers
             {
                 TokenName = "Authorization"
             };
-        }
-
-        [Route("GetUsers")]
-        [HttpPost]
-        public async Task<List<UserAppRoleDTO>> GetUsers([FromBody] AM_AppSignIn appSignIn)
-        {
-            APIAccess apiAccess = new APIAccess("GetUsersInApp", Get().BTAMURL);
-            var body = JsonConvert.SerializeObject(appSignIn);
-            var result = await apiAccess.PostRequest(body);
-            var users = result == null ? new List<UserAppRoleDTO>() : JsonConvert.DeserializeObject<List<UserAppRoleDTO>>(result);
-            return users;
         }
         #endregion
     }
