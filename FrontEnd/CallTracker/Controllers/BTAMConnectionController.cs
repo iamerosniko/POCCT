@@ -1,12 +1,16 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using BackendConnector.Services;
+using CallTracker.Models.BTAMEntities;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace CallTracker.Controllers
 {
@@ -17,6 +21,12 @@ namespace CallTracker.Controllers
         private TokenFactory _tokenFactory;
 
         #region API
+        [HttpGet("GetBTAMURL")]
+        public BTAMEntity Get()
+        {
+            return new BTAMEntity { BTAMURL = Startup.Configuration["BTAMURL"] };
+        }
+
         [Route("GetUserName")]
         [HttpGet]
         public CurrentUser GetSignInUsername()
@@ -27,12 +37,6 @@ namespace CallTracker.Controllers
             {
                 UserName = username
             };
-        }
-
-        [HttpGet("GetBTAMURL")]
-        public BTAMEntity Get()
-        {
-            return new BTAMEntity { BTAMURL = Startup.Configuration["BTAMURL"] };
         }
 
         [Route("GetAuthorizationUser")]
@@ -58,6 +62,17 @@ namespace CallTracker.Controllers
             {
                 TokenName = "Authorization"
             };
+        }
+
+        [Route("GetUsers")]
+        [HttpPost]
+        public async Task<List<UserAppRoleDTO>> GetUsers([FromBody] AM_AppSignIn appSignIn)
+        {
+            APIAccess apiAccess = new APIAccess("GetUsersInApp", Get().BTAMURL);
+            var body = JsonConvert.SerializeObject(appSignIn);
+            var result = await apiAccess.PostRequest(body);
+            var users = result == null ? new List<UserAppRoleDTO>() : JsonConvert.DeserializeObject<List<UserAppRoleDTO>>(result);
+            return users;
         }
         #endregion
     }
@@ -141,34 +156,15 @@ namespace CallTracker.Controllers
     }
     #endregion
 
-    public class CurrentUser
-    {
-        public string UserID { get; set; }
-        public string UserName { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Role { get; set; }
 
-        public CurrentUser()
-        {
-            UserID = "";
-            FirstName = "";
-            LastName = "";
-            Role = "NoAccess";
-        }
-    }
-    public class AppToken
-    {
-        public String TokenName { get; set; }
-        public String Token { get; set; }
-        public AppToken()
-        {
-            Token = "";
-            TokenName = "";
-        }
-    }
-    public class BTAMEntity
-    {
-        public string BTAMURL { get; set; }
-    }
+
+
+
+
+
+
+
+
+
+
 }
