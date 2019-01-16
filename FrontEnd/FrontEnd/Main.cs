@@ -1,4 +1,5 @@
 ﻿using BackendConnector.Controllers;
+using BackendConnector.Entities;
 using BTAMConnection.Controller;
 using BTAMConnection.Entities;
 using System;
@@ -54,10 +55,10 @@ namespace FrontEnd
             this.Text = "Welcome " + user.FirstName + " " + user.LastName + "! (" + user.Role + ")";
 
 
-            CallsController callsController = new CallsController();
-            CallCategoriesController callCategoriesController = new CallCategoriesController();
-            CallStatusesController callStatusesController = new CallStatusesController();
-            CallerAssocsController callerAssocsController = new CallerAssocsController();
+            CallsBWController callsController = new CallsBWController();
+            CallBWCategoriesController callCategoriesController = new CallBWCategoriesController();
+            CallBWStatusesController callStatusesController = new CallBWStatusesController();
+            CallerBWAssocsController callerAssocsController = new CallerBWAssocsController();
 
             var CallList = await callsController.Get();
             var CallCategList = await callCategoriesController.Get();
@@ -68,6 +69,18 @@ namespace FrontEnd
             GridCallerAssocs.DataSource = CallerAssocList;
             GridCallCategories.DataSource = CallCategList;
             GridCallStatuses.DataSource = CallStatusList;
+
+            CtdCallsDTO sCalls = new CtdCallsDTO
+            {
+                CallCategoryID = 3,
+                CallerAssocID = 1,
+                CallerPhone = "12345678",
+                CallStatusID = 5,
+                DateOfCall = DateTime.Now,
+                user_name = "alverer"
+            };
+
+            //var res = await callsController.Post(sCalls);
         }
     }
 }

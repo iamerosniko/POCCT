@@ -45,12 +45,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\CallCategoriesController.cs" />
-    <Compile Include="Controllers\CallerAssocsController.cs" />
-    <Compile Include="Controllers\CallsController.cs" />
-    <Compile Include="Controllers\CallStatusesController.cs" />
+    <Compile Include="Controllers\CallBWCategoriesController.cs" />
+    <Compile Include="Controllers\CallerBWAssocsController.cs" />
+    <Compile Include="Controllers\CallsBWController.cs" />
+    <Compile Include="Controllers\CallBWStatusesController.cs" />
     <Compile Include="Entities\CtdCallCategories.cs" />
     <Compile Include="Entities\CtdCallerAssocs.cs" />
+    <Compile Include="Entities\CtdCallsDTO.cs" />
     <Compile Include="Entities\CtdCalls.cs" />
     <Compile Include="Entities\CtdCallStatuses.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

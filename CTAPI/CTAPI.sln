@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28010.2046
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CTAPI", "CTAPI\CTAPI.csproj", "{F393EAA8-4D16-44DC-A7B6-900DE44855D7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CallTracker", "CallTracker\CallTracker.csproj", "{410AAAF4-689F-43D1-B42A-A946E5636589}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{F393EAA8-4D16-44DC-A7B6-900DE44855D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F393EAA8-4D16-44DC-A7B6-900DE44855D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F393EAA8-4D16-44DC-A7B6-900DE44855D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{410AAAF4-689F-43D1-B42A-A946E5636589}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{410AAAF4-689F-43D1-B42A-A946E5636589}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{410AAAF4-689F-43D1-B42A-A946E5636589}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{410AAAF4-689F-43D1-B42A-A946E5636589}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

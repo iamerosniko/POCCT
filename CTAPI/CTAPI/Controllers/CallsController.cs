@@ -1,6 +1,7 @@
 ﻿using CTAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -87,9 +88,12 @@ namespace CTAPI.Controllers
             {
                 return BadRequest(ModelState);
             }
-
-            _context.CtdCalls.Add(ctdCalls);
-            await _context.SaveChangesAsync();
+            try
+            {
+                _context.CtdCalls.Add(ctdCalls);
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception ex) { }
 
             return CreatedAtAction("GetCtdCalls", new { id = ctdCalls.CallID }, ctdCalls);
         }
