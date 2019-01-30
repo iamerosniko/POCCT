@@ -10,7 +10,7 @@
         <li [routerLinkActive]="['active']" role="presentation"><a [routerLink]="['./Reports']">Maintenance</a></li>
       </ul> -->
       <ul class="nav navbar-nav" *ngFor="let r of URoutes">
-        <li [routerLinkActive]="['active']" role="presentation"><a (click)="goTo(r.AttribDesc)">{{r.AttribName}}</a></li>
+        <li [routerLinkActive]="['active']" role="presentation"><a [routerLink]="['./'+r.AttribDesc]" >{{r.AttribName}}</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"><i class="fa fa-user-circle"></i>&nbsp;Hello, {{MyName}}</a></li>

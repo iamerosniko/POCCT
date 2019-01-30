@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MaintenanceComponent implements OnInit {
 
+  menu:number=0;
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  changeHighlight(menu:number){
+    this.menu=menu;
+  }
 }

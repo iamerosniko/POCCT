@@ -1,3 +1,37 @@
-<p>
-  maintenance works!
-</p>
+<div class="col-md-12">
+  <div class="row">
+    <div class="col-md-12">
+      <h3>Maintenance</h3>
+      <hr style="border-bottom: 1px solid #2196F3; margin-left: -15px; margin-right: -15px; " />
+    </div>
+  </div>
+  <div class="row">
+    <!-- <div class="col-md-1"></div> -->
+    <!--nav pills-->
+    <div id="sidebanner" class="col-md-2">
+      <ul class="nav nav-pills nav-stacked">
+        <!-- <li role="presentation" ><a href="#menu1" data-toggle="tab"><i class="fa fa-table"></i>&nbsp;Main Table</a></li> -->
+        <li id="deptab" [className]="menu==0?'active':''" role="presentation"><a (click)="changeHighlight(0)"><i class="fa fa-institution"></i>&nbsp;Main
+            Table</a></li>
+        <li id="protab" [className]="menu==1?'active':''" role="presentation"><a (click)="changeHighlight(1)"><i class="fa fa-qrcode"></i>&nbsp;Caller
+            Association</a></li>
+        <li id="cmctab" [className]="menu==2?'active':''" role="presentation"><a (click)="changeHighlight(2)"><i class="fa fa-map-signs"></i>&nbsp;Call
+            Status</a></li>
+        <li id="ccstab" [className]="menu==3?'active':''" role="presentation"><a (click)="changeHighlight(3)"><i class="fa fa-balance-scale"></i>&nbsp;Call
+            Categories</a></li>
+        <!-- <li id="contab" [routerLinkActive]="['active']" role="presentation"><a (click)="contactstabclick()" [routerLink]="['./', {outlets: {'mroute': ['Contacts']}}]"><i class="fa fa-id-card-o"></i>&nbsp;Contacts</a></li> -->
+      </ul>
+      <br />
+    </div>
+    <!-- </div>
+        <div class="row"> -->
+    <div class="col-md-10">
+      <div class="tab-content">
+        <main-table *ngIf="menu==0"></main-table>
+        <caller-association *ngIf="menu==1"></caller-association>
+        <call-status *ngIf="menu==2"></call-status>
+        <call-categories *ngIf="menu==3"></call-categories>
+      </div>
+    </div>
+  </div>
+</div>
