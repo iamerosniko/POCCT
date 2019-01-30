@@ -6,7 +6,6 @@ C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\CallTracker\bin\Debug\netcoreap
 C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\CallTracker\bin\Debug\netcoreapp2.1\CallTracker.pdb
 C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\CallTracker\bin\Debug\netcoreapp2.1\CallTracker.Views.dll
 C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\CallTracker\bin\Debug\netcoreapp2.1\CallTracker.Views.pdb
-C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\CallTracker\obj\Debug\netcoreapp2.1\CallTracker.csprojAssemblyReference.cache
 C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\CallTracker\obj\Debug\netcoreapp2.1\CallTracker.csproj.CoreCompileInputs.cache
 C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\CallTracker\obj\Debug\netcoreapp2.1\CallTracker.RazorAssemblyInfo.cache
 C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\CallTracker\obj\Debug\netcoreapp2.1\CallTracker.RazorAssemblyInfo.cs
@@ -28,3 +27,4 @@ C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\CallTracker\obj\Debug\netcoreap
 C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\CallTracker\obj\Debug\netcoreapp2.1\CallTracker.csproj.CopyComplete
 C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\CallTracker\obj\Debug\netcoreapp2.1\CallTracker.dll
 C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\CallTracker\obj\Debug\netcoreapp2.1\CallTracker.pdb
+C:\Users\alverer\Documents\GitHub\POCCT\FrontEnd\CallTracker\obj\Debug\netcoreapp2.1\CallTracker.csprojAssemblyReference.cache
