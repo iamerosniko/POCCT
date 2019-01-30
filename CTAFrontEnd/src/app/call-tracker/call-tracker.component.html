@@ -1,76 +1,85 @@
-<div class="container">
+<div class="col-md-12">
   <div class="row">
     <div class="col-md-12">
-      <h2>Call Tracker</h2>
+      <h3>Call Tracker</h3>
+      <hr style="border-bottom: 1px solid #2196F3; margin-left: -15px; margin-right: -15px; " />
     </div>
   </div>
   <div class="col-md-12">
-    <!--return button-->
-    <div class="row">
-      <a id="btnGoBack" (click)="depBack()" class="btn btn-default btn-sm"><i class="fa fa-chevron-left"></i>&nbsp;Go
-        Back</a>
-      <!-- <button (click)="save()" [disabled]="deptForm.status=='INVALID'" type="submit" class="btn btn-primary btn-sm"><i
-          class="fa fa-save"></i>&nbsp;Save</button> -->
+    <div class="col-md-12">
     </div>
-    <br />
-    <!--header-->
-    <div class="row">
-      <!--for example you are in adding mode, span.add should be displayed while span.edit will be hidden-->
-      <h4>
-        <span *ngIf="formState=='New'" class="add"><i class="fa fa-plus"></i>&nbsp;New Record</span>
-        <span *ngIf="formState!='New'" class="edit"><i class="fa fa-edit"></i>&nbsp;Edit Details</span>
-      </h4>
+    <div class="col-md-12">
+      <!--return button-->
+      <div class="row">
+        <!-- <button (click)="save()" [disabled]="deptForm.status=='INVALID'" type="submit" class="btn btn-primary btn-sm"><i
+            class="fa fa-save"></i>&nbsp;Save</button> -->
+            <button (click)="save()" type="submit" class="btn btn-primary btn-sm"><i
+          class="fa fa-save"></i>&nbsp;Save</button>
+      </div>
+      <br />
+      <!--header-->
+      <div class="row">
+        <!--for example you are in adding mode, span.add should be displayed while span.edit will be hidden-->
+        <h4>
+          <span class="add"><i class="fa fa-edit"></i>&nbsp;Enter Client Information</span>
+        </h4>
+      </div>
+      <br />
+      <!--fields-->
+      <div class="row">
+        <!-- <form [formGroup]="deptForm" (ngSubmit)="save()"> -->
+        <div class=" col-md-6">
+          <div class="form-group">
+            <label class="control-label">Caller Phone Number</label>
+            <input type="text" maxlength="100" class="form-control input-sm" formControlName="Department" />
+          </div>
+        </div>
+        <div class=" col-md-6">
+          <div class="form-group">
+            <label class="control-label">Caller Association</label>
+            <input type="text" maxlength="100" class="form-control input-sm" formControlName="Department" />
+          </div>
+        </div>
+        <!-- </form> -->
+      </div>
+      <div class="row">
+        <!-- <form [formGroup]="deptForm" (ngSubmit)="save()"> -->
+        <div class=" col-md-6">
+          <div class="form-group">
+            <label class="control-label">CSR Name</label>
+            <input type="text" disabled maxlength="100" class="form-control input-sm" formControlName="Department" />
+          </div>
+        </div>
+        <div class=" col-md-6">
+          <div class="form-group">
+            <label class="control-label">Date of Call</label>
+            <input type="text" disabled maxlength="100" class="form-control input-sm" formControlName="Department" />
+          </div>
+        </div>
+        <!-- </form> -->
+      </div>
+      <div class="row">
+        <!-- <form [formGroup]="deptForm" (ngSubmit)="save()"> -->
+        <div class=" col-md-6">
+          <div class="form-group">
+            <label class="control-label">Call Status</label>
+            <input type="text" maxlength="100" class="form-control input-sm" formControlName="Department" />
+          </div>
+        </div>
+        <div class=" col-md-6">
+          <div class="form-group">
+            <label class="control-label">Call Category</label>
+            <input type="text" maxlength="100" class="form-control input-sm" formControlName="Department" />
+          </div>
+        </div>
+        <!-- </form> -->
+      </div>
+      <br />
     </div>
-    <br />
-    <!--fields-->
-    <div class="row">
-      <!-- <form [formGroup]="deptForm" (ngSubmit)="save()"> -->
-      <div class=" col-md-6">
-        <div class="form-group">
-          <label class="control-label">Caller Phone Number</label>
-          <input type="text" maxlength="100" class="form-control input-sm" formControlName="Department" />
-        </div>
-      </div>
-      <div class=" col-md-6">
-        <div class="form-group">
-          <label class="control-label">Caller Association</label>
-          <input type="text" maxlength="100" class="form-control input-sm" formControlName="Department" />
-        </div>
-      </div>
-      <!-- </form> -->
-    </div>
-    <div class="row">
-      <!-- <form [formGroup]="deptForm" (ngSubmit)="save()"> -->
-      <div class=" col-md-6">
-        <div class="form-group">
-          <label class="control-label">CSR Name</label>
-          <input type="text" disabled maxlength="100" class="form-control input-sm" formControlName="Department" />
-        </div>
-      </div>
-      <div class=" col-md-6">
-        <div class="form-group">
-          <label class="control-label">Date of Call</label>
-          <input type="text" disabled maxlength="100" class="form-control input-sm" formControlName="Department" />
-        </div>
-      </div>
-      <!-- </form> -->
-    </div>
-    <div class="row">
-      <!-- <form [formGroup]="deptForm" (ngSubmit)="save()"> -->
-      <div class=" col-md-6">
-        <div class="form-group">
-          <label class="control-label">Call Status</label>
-          <input type="text" maxlength="100" class="form-control input-sm" formControlName="Department" />
-        </div>
-      </div>
-      <div class=" col-md-6">
-        <div class="form-group">
-          <label class="control-label">Call Category</label>
-          <input type="text" maxlength="100" class="form-control input-sm" formControlName="Department" />
-        </div>
-      </div>
-      <!-- </form> -->
-    </div>
-    <br />
   </div>
+</div>
+
+
+<div class="container">
+  
 </div>

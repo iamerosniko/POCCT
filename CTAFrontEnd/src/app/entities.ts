@@ -1,3 +1,4 @@
+//BTAM
 export interface UUser {
   AuthenticationToken?: string;
   AuthorizationToken?: string;
@@ -13,8 +14,8 @@ export interface UServices{
     Attributes?:UAttributes[]
 }
 
-
 export interface UAttributes{
     AttribName?:string,
     AttribDesc?:string,
 }
+//#CALL TRACKER
