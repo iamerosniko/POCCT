@@ -1,11 +1,13 @@
 ﻿using BackendConnector.Controllers;
 using BackendConnector.Entities;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace CallTracker.Controllers
 {
+    [EnableCors("CORS")]
     [Route("api/[controller]")]
     [ApiController]
     public class CallStatusesController : ControllerBase

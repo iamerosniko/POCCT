@@ -1,5 +1,6 @@
 ﻿using BackendConnector.Services;
 using CallTracker.Models.BTAMEntities;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
@@ -14,6 +15,7 @@ using System.Threading.Tasks;
 
 namespace CallTracker.Controllers
 {
+    [EnableCors("CORS")]
     [Route("api/[controller]")]
     [ApiController]
     public class BTAMConnectionController : ControllerBase
@@ -42,6 +44,41 @@ namespace CallTracker.Controllers
             {
                 AppURL = Startup.Configuration["Internal:HostName"],
                 UserName = GetSignInUsername().UserName
+            };
+
+            var body = JsonConvert.SerializeObject(si);
+            var result = await apiAccess.PostRequest(body);
+            var currentUser = result == null ? new UserAppRoleDTO() : JsonConvert.DeserializeObject<UserAppRoleDTO>(result);
+
+            if (currentUser != new UserAppRoleDTO())
+            {
+                apiAccess = new APIAccess("Authenticate/" + Startup.Configuration["Internal:AppSecurityKey"], Get().BTAMURL);
+                body = JsonConvert.SerializeObject(currentUser);
+                result = await apiAccess.PostRequest(body);
+
+                var authenticationToken = result != null ? JsonConvert.DeserializeObject<AppToken>(result) : new AppToken();
+                currentUser.AuthenticationToken = authenticationToken.Token;
+                currentUser.AuthorizationToken = GetAuthorizationToken(authenticationToken).Token;
+            }
+            else
+            {
+
+            }
+
+
+            return currentUser;
+        }
+
+        [Route("AppSignIn/{username}")]
+        [HttpGet]
+        public async Task<UserAppRoleDTO> AppSignIn([FromRoute]string username)
+        {
+            APIAccess apiAccess = new APIAccess("AppSignIn2", Get().BTAMURL);
+
+            AM_AppSignIn si = new AM_AppSignIn
+            {
+                AppURL = Startup.Configuration["Internal:HostName"],
+                UserName = username
             };
 
             var body = JsonConvert.SerializeObject(si);
@@ -192,16 +229,6 @@ namespace CallTracker.Controllers
         #endregion
     }
     #endregion
-
-
-
-
-
-
-
-
-
-
 
 
 }

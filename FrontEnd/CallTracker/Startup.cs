@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Protocols.OpenIdConnect;
+using Newtonsoft.Json.Serialization;
+using System;
 
 namespace CallTracker
 {
@@ -46,7 +48,29 @@ namespace CallTracker
             .AddCookie();
 
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1).AddJsonOptions(o =>
+            {
+                if (o.SerializerSettings.ContractResolver != null)
+                {
+                    var castedResolver = o.SerializerSettings.ContractResolver
+                            as DefaultContractResolver;
+                    castedResolver.NamingStrategy = null;
+                }
+            });
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CORS",
+                corsPolicyBuilder => corsPolicyBuilder.AllowAnyOrigin()
+                // Apply CORS policy for any type of origin
+                .AllowAnyMethod()
+                // Apply CORS policy for any type of http methods
+                .SetPreflightMaxAge(new TimeSpan(0, 0, 0, 0, 0))
+                .AllowAnyHeader()
+                // Apply CORS policy for any headers
+                .AllowCredentials());
+                // Apply CORS policy for all users
+            });
 
             services.AddSession();
 
@@ -71,6 +95,8 @@ namespace CallTracker
             app.UseStaticFiles();
             app.UseCookiePolicy();
             app.UseSession();
+
+            app.UseCors("CORS");
 
             app.UseMvc(routes =>
             {
