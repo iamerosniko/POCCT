@@ -12,11 +12,11 @@
   <tbody>
     <tr *ngFor="let call of CallTrackers">
       <td>{{call.CallerPhone}}</td>
-      <td>{{call.CallerAssocID}}</td>
+      <td>{{call.CallerAssoc}}</td>
       <td>{{call.user_name}}</td>
-      <td>{{call.DateOfCall}}</td>
-      <td>{{call.CallCategoryID}}</td>
-      <td>{{call.CallStatusID}}</td>
+      <td>{{call.DateOfCall | date:'MM/dd/yyyy'}}</td>
+      <td>{{call.CallCategory}}</td>
+      <td>{{call.CallStatus}}</td>
     </tr>
   </tbody>
 </table>

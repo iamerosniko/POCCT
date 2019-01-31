@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CallCategoriesService } from '../../services/myservices';
+import { CT_CallCategories } from '../../entities';
 
 @Component({
   selector: 'call-categories',
@@ -6,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./call-categories.component.css']
 })
 export class CallCategoriesComponent implements OnInit {
+  categories:CT_CallCategories[];
+  constructor(private callCategorySvc:CallCategoriesService) { }
 
-  constructor() { }
-
-  ngOnInit() {
+  async ngOnInit() {
+    this.categories=await this.callCategorySvc.getCategories();
   }
 
 }

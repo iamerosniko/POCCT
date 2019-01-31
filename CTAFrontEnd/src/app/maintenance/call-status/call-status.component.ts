@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CallStatusesService } from '../../services/myservices';
+import { CT_CallStatuses } from '../../entities';
 
 @Component({
   selector: 'call-status',
@@ -6,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./call-status.component.css']
 })
 export class CallStatusComponent implements OnInit {
+  callStatuses:CT_CallStatuses[];
+  constructor(private callStatusSvc : CallStatusesService) { }
 
-  constructor() { }
-
-  ngOnInit() {
+  async ngOnInit() {
+    this.callStatuses= await this.callStatusSvc.getStatuses();
   }
 
 }

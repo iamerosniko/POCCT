@@ -14,6 +14,7 @@ export class MainTableComponent implements OnInit {
 
   async ngOnInit() {
     this.CallTrackers = await this.callSvc.getCalls();
+    console.log(this.CallTrackers)
   }
 
 }

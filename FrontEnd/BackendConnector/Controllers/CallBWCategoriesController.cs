@@ -1,16 +1,11 @@
 ﻿using BackendConnector.Entities;
 using BackendConnector.Services;
-using Microsoft.AspNetCore.Cors;
-using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace BackendConnector.Controllers
 {
-    [EnableCors("CORS")]
-    [Route("api/[controller]")]
-    [ApiController]
     public class CallBWCategoriesController
     {
         APIAccess _apiAccess;

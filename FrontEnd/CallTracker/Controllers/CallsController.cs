@@ -1,5 +1,6 @@
 ﻿using BackendConnector.Controllers;
 using BackendConnector.Entities;
+using CallTracker.Models.DTO;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -13,22 +14,62 @@ namespace CallTracker.Controllers
     public class CallsController : ControllerBase
     {
         CallsBWController callsbw;
+        CallerBWAssocsController callAssocsbw;
+        CallBWStatusesController callStatusesbw;
+        CallBWCategoriesController callCategoriesbw;
         public CallsController()
         {
             callsbw = new CallsBWController(Startup.Configuration["Internal:APIURL"]);
+            callAssocsbw = new CallerBWAssocsController(Startup.Configuration["Internal:APIURL"]);
+            callStatusesbw = new CallBWStatusesController(Startup.Configuration["Internal:APIURL"]);
+            callCategoriesbw = new CallBWCategoriesController(Startup.Configuration["Internal:APIURL"]);
         }
         // GET: api/Calls
         [HttpGet]
-        public async Task<IEnumerable<CtdCalls>> Get()
+        public async Task<List<CTDCalls_DTO>> Get()
         {
-            return await callsbw.Get();
+            List<CTDCalls_DTO> ctdCalls = new List<CTDCalls_DTO>(); 
+            var calls = await callsbw.Get();
+            var callCategories = await callCategoriesbw.Get();
+            var callStatuses = await callStatusesbw.Get();
+            var callAssocs = await callAssocsbw.Get();
+
+            foreach(var call in calls)
+            {
+                try
+                {
+                    var categ = callCategories.Find(x => x.CallCategoryID == call.CallCategoryID);
+                    var status = callStatuses.Find(x => x.CallStatusID == call.CallStatusID);
+                    var assoc = callAssocs.Find(x => x.CallerAssocID == call.CallerAssocID);
+
+                    ctdCalls.Add(new CTDCalls_DTO
+                    {
+                        CallCategory = categ.CallCategoryDesc,
+                        CallerAssocID = call.CallerAssocID,
+                        CallCategoryID = call.CallCategoryID,
+                        CallerAssoc = assoc.CallerAssocDesc,
+                        CallerPhone = call.CallerPhone,
+                        CallID = call.CallID,
+                        CallStatus = status.CallStatusDesc,
+                        CallStatusID = call.CallStatusID,
+                        DateOfCall = call.DateOfCall,
+                        user_name = call.user_name
+                    });
+                }
+                catch
+                {
+
+                }
+            }
+            return ctdCalls;
         }
 
         // GET: api/Calls/5
         [HttpGet("{id}")]
-        public async Task<CtdCalls> Get(string id)
+        public async Task<CTDCalls_DTO> Get(int id)
         {
-            return await callsbw.Get(id);
+            var calls = await Get();
+            return calls.Find(x => x.CallID == id);
         }
 
         // POST: api/Calls

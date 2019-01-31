@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CallAssocsService } from '../../services/myservices';
+import { CT_CallerAssocs } from '../../entities';
 
 @Component({
   selector: 'caller-association',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CallerAssociationComponent implements OnInit {
 
-  constructor() { }
+  assocs:CT_CallerAssocs[];
+  constructor(private callerAssocSvc : CallAssocsService) { }
 
-  ngOnInit() {
+  async ngOnInit() {
+    this.assocs=await this.callerAssocSvc.getAssocs();
   }
 
 }

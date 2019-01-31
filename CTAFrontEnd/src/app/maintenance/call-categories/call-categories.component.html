@@ -6,8 +6,9 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td></td>
+    <tr *ngFor="let category of categories">
+      <td>{{category.CallCategoryDesc}}</td>
+      <td>{{category.Active}}</td>
     </tr>
   </tbody>
 </table>
