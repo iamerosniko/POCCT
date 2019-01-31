@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
+import { FormsModule } from "@angular/forms";
 import { MaintenanceComponent } from "./maintenance.component";
 import { RouterModule } from "@angular/router";
 import { CallCategoriesComponent } from "./call-categories/call-categories.component";
@@ -20,7 +21,7 @@ import {
     CallStatusComponent,
     MainTableComponent
   ],
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, FormsModule],
   providers: [
     CallAssocsService,
     CallCategoriesService,

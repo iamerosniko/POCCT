@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace CallTracker.Controllers
 {
-    [EnableCors("CORS")]
     [Route("api/[controller]")]
+    [EnableCors("CORS")]
     [ApiController]
     public class CallStatusesController : ControllerBase
     {

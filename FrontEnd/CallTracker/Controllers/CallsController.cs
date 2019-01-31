@@ -53,7 +53,7 @@ namespace CallTracker.Controllers
                         CallStatus = status.CallStatusDesc,
                         CallStatusID = call.CallStatusID,
                         DateOfCall = call.DateOfCall,
-                        user_name = call.user_name
+                        user_name = call.user_name,
                     });
                 }
                 catch

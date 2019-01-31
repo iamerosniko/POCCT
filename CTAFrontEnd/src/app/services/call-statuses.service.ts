@@ -37,7 +37,7 @@ export class CallStatusesService {
 
   deleteStatus(id: string) {
     this.api.normalHeader();
-    this.api.apiUrl=ClientApiSettings.GETCLIENTAPIURL("Calls")
+    this.api.apiUrl=ClientApiSettings.GETCLIENTAPIURL("CallStatuses")
     return this.api.deleteData(id);
   }
 }

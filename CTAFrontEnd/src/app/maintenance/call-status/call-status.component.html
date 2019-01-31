@@ -1,14 +1,44 @@
+
+<button (click)="CanEdit = !CanEdit">edit</button>
+
 <table class="table table-hover">
   <thead>
     <tr>
       <th>Description</th>
       <th>Status</th>
+      <th>Actions</th>
     </tr>
   </thead>
   <tbody>
+    <tr>
+      <td>
+        <input type="text" class="form-control" [(ngModel)]="callStatus.CallStatusDesc" />
+      </td>
+      <td>
+        <input type="checkbox" [(ngModel)]="callStatus.Active" />
+      </td>
+      <td><button (click)="addStatus(callStatus)">Add</button></td>
+    </tr>
     <tr *ngFor="let callStatus of callStatuses">
-      <td>{{callStatus.CallStatusDesc}}</td>
-      <td>{{callStatus.Active}}</td>
+        <td>
+            <input
+              type="text"
+              class="form-control"
+              [disabled]="!CanEdit"
+              [(ngModel)]="callStatus.CallStatusDesc"
+            />
+          </td>
+          <td>
+            <input
+              type="checkbox"
+              [disabled]="!CanEdit"
+              [(ngModel)]="callStatus.Active"
+            />
+          </td>
+          <div> 
+              <td><button (click)="updateStatus(callStatus)">save</button></td>
+              <td><button (click)="deleteStatus(callStatus)">delete</button></td>
+          </div>
     </tr>
   </tbody>
 </table>
