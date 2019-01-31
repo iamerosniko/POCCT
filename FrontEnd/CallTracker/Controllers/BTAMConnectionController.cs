@@ -24,11 +24,17 @@ namespace CallTracker.Controllers
 
         #region API
         [Route("GetUsers")]
-        [HttpPost]
-        public async Task<List<UserAppRoleDTO>> GetUsers([FromBody] AM_AppSignIn appSignIn)
+        [HttpGet]
+        public async Task<List<UserAppRoleDTO>> GetUsers()
         {
+            AM_AppSignIn si = new AM_AppSignIn
+            {
+                AppURL = Startup.Configuration["Internal:HostName"],
+                UserName = GetSignInUsername().UserName
+            };
+
             APIAccess apiAccess = new APIAccess("GetUsersInApp", Get().BTAMURL);
-            var body = JsonConvert.SerializeObject(appSignIn);
+            var body = JsonConvert.SerializeObject(si);
             var result = await apiAccess.PostRequest(body);
             var users = result == null ? new List<UserAppRoleDTO>() : JsonConvert.DeserializeObject<List<UserAppRoleDTO>>(result);
             return users;

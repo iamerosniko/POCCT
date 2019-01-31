@@ -23,11 +23,10 @@ export class TopNavComponent {
     this.MyName = await this.user.FirstName;
     var service = this.user.Services.find(x=>x.ServiceName=="Routes")
     this.URoutes = service.Attributes;
-    console.log(this.URoutes)
+    console.log(await this.loginSvc.getUsers())
   }
 
   async goTo(path: string){
-    console.log(path)
     this.router.navigate([path]);
   }
 }
