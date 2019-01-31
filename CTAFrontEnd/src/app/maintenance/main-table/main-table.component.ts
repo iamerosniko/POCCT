@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CallsService } from '../../services/myservices';
+import { CT_Calls } from '../../entities';
 
 @Component({
   selector: 'main-table',
@@ -6,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-table.component.css']
 })
 export class MainTableComponent implements OnInit {
+  public CallTrackers:CT_Calls[];
 
-  constructor() { }
+  constructor(private callSvc:CallsService) { }
 
-  ngOnInit() {
+  async ngOnInit() {
+    this.CallTrackers = await this.callSvc.getCalls();
   }
 
 }

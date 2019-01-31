@@ -10,8 +10,13 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td></td>
+    <tr *ngFor="let call of CallTrackers">
+      <td>{{call.CallerPhone}}</td>
+      <td>{{call.CallerAssocID}}</td>
+      <td>{{call.user_name}}</td>
+      <td>{{call.DateOfCall}}</td>
+      <td>{{call.CallCategoryID}}</td>
+      <td>{{call.CallStatusID}}</td>
     </tr>
   </tbody>
 </table>

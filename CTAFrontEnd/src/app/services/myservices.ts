@@ -1,3 +1,7 @@
 export * from './btamservice.service'
 export * from './clientapi.settings'
 export * from './clientapi.service'
+export * from './call-assocs.service'
+export * from './call-categories.service'
+export * from './call-statuses.service'
+export * from './calls.service'
