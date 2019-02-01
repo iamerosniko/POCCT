@@ -4,6 +4,7 @@ export interface UUser {
   AuthorizationToken?: string;
   FirstName?: string;
   LastName?: string;
+  UserName?: string;
   Role?: string;
   Services?: UServices[];
 }
@@ -33,9 +34,9 @@ export interface CT_Calls {
 }
 
 export interface CT_CallerAssocs {
-    CallerAssocID?:number;
-    CallerAssocDesc?:string;
-    Active ?:boolean;
+  CallerAssocID?: number;
+  CallerAssocDesc?: string;
+  Active?: boolean;
 }
 
 export interface CT_CallCategories {

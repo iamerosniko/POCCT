@@ -54,6 +54,7 @@ namespace CallTracker.Controllers
                         CallStatusID = call.CallStatusID,
                         DateOfCall = call.DateOfCall,
                         user_name = call.user_name,
+                        IsSaved = false
                     });
                 }
                 catch

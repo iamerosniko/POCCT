@@ -17,5 +17,6 @@ namespace CallTracker.Models.DTO
         public string CallStatus { get; set; }
         public int CallCategoryID { get; set; }
         public string CallCategory { get; set; }
+        public bool IsSaved { get; set; }
     }
 }

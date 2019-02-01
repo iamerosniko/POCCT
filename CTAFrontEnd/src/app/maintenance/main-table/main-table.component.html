@@ -1,4 +1,4 @@
-<table class="table table-hover">
+<table class="table table-responsive-sm ">
   <thead>
     <tr>
       <th>Caller Phone</th>
@@ -9,14 +9,32 @@
       <th>Call Status</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody *ngIf="TableShow">
     <tr *ngFor="let call of CallTrackers">
-      <td>{{call.CallerPhone}}</td>
-      <td>{{call.CallerAssoc}}</td>
-      <td>{{call.user_name}}</td>
+      <td><input type="text" (keyup)="onKey($event,call)" [(ngModel)]="call.CallerPhone"></td>
+      <td>
+        <select (change)="updateCallTracker(call)" class="form-control" [(ngModel)]="call.CallerAssocID">
+          <option value="0">-- Select One --</option>
+          <option *ngFor="let assocs of CallAssocs" [value]="assocs.CallerAssocID">{{assocs.CallerAssocDesc}}</option>
+        </select>
+      </td>
+      <td>
+        <select (change)="updateCallTracker(call)" name="" class="form-control" [(ngModel)]="call.user_name">
+          <option value="">-- Select One --</option>
+          <option *ngFor="let users of BTAMUsers" [value]="users.UserName">{{users.UserName}}</option>
+        </select>
+      </td>
       <td>{{call.DateOfCall | date:'MM/dd/yyyy'}}</td>
-      <td>{{call.CallCategory}}</td>
-      <td>{{call.CallStatus}}</td>
+      <td><select (change)="updateCallTracker(call)" name="" class="form-control" [(ngModel)]="call.CallCategoryID">
+          <option value="">-- Select One --</option>
+          <option *ngFor="let categ of CallCategories" [value]="categ.CallCategoryID">{{categ.CallCategoryDesc}}</option>
+        </select></td>
+      <td>
+        <select (change)="updateCallTracker(call)" name="" class="form-control" [(ngModel)]="call.CallStatusID">
+          <option value="">-- Select One --</option>
+          <option *ngFor="let stats of CallStatuses" [value]="stats.CallStatusID">{{stats.CallStatusDesc}}</option>
+        </select>
+      </td>
     </tr>
   </tbody>
 </table>

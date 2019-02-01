@@ -3,10 +3,10 @@ export class ClientApiSettings {
   // private static CURRENT_URL = "api/"
   //if using NG Serve
   //localhost
-  // private static CLIENT_URL = "http://localhost:57485/api/"
+  private static CLIENT_URL = "http://localhost:57485/api/"
   //direct
-  private static CLIENT_URL =
-    "https://calltracker.apps.cac.preview.pcf.manulife.com/api/";
+  // private static CLIENT_URL =
+    // "https://calltracker.apps.cac.preview.pcf.manulife.com/api/";
   //prod build
   // private static CLIENT_URL = "api/"
 
