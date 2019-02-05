@@ -30,7 +30,7 @@ export interface CT_Calls {
   CallStatusID?: number;
   CallStatus?: string;
   CallCategoryID?: number;
-  CallCategory;
+  CallCategory?:string;
 }
 
 export interface CT_CallerAssocs {

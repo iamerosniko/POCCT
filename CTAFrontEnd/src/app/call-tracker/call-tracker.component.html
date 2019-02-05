@@ -13,7 +13,7 @@
       <div class="row">
         <!-- <button (click)="save()" [disabled]="deptForm.status=='INVALID'" type="submit" class="btn btn-primary btn-sm"><i
             class="fa fa-save"></i>&nbsp;Save</button> -->
-            <button (click)="save()" type="submit" class="btn btn-primary btn-sm"><i
+            <button (click)="save(Call)" type="submit" class="btn btn-primary btn-sm"><i
           class="fa fa-save"></i>&nbsp;Save</button>
       </div>
       <br />
@@ -31,13 +31,16 @@
         <div class=" col-md-6">
           <div class="form-group">
             <label class="control-label">Caller Phone Number</label>
-            <input type="text" maxlength="100" class="form-control input-sm" formControlName="Department" />
+            <input type="text" maxlength="100" class="form-control input-sm" [(ngModel)]="Call.CallerPhone"/>
           </div>
         </div>
         <div class=" col-md-6">
           <div class="form-group">
             <label class="control-label">Caller Association</label>
-            <input type="text" maxlength="100" class="form-control input-sm" formControlName="Department" />
+              <select class="form-control input-sm" [(ngModel)]="Call.CallerAssocID">
+                <option value="0">-- Select One --</option>
+                <option *ngFor="let assoc of CallAssocs" [value]="assoc.CallerAssocID">{{assoc.CallerAssocDesc}}</option>
+              </select>
           </div>
         </div>
         <!-- </form> -->
@@ -47,13 +50,13 @@
         <div class=" col-md-6">
           <div class="form-group">
             <label class="control-label">CSR Name</label>
-            <input type="text" disabled maxlength="100" class="form-control input-sm" formControlName="Department" />
+            <input type="text" disabled class="form-control input-sm" [(ngModel)]="Call.user_name" />
           </div>
         </div>
         <div class=" col-md-6">
           <div class="form-group">
             <label class="control-label">Date of Call</label>
-            <input type="text" disabled maxlength="100" class="form-control input-sm" formControlName="Department" />
+            <input type="text" disabled class="form-control input-sm" [value]="Call.DateOfCall | date:'MM/dd/yyyy'" />
           </div>
         </div>
         <!-- </form> -->
@@ -63,13 +66,19 @@
         <div class=" col-md-6">
           <div class="form-group">
             <label class="control-label">Call Status</label>
-            <input type="text" maxlength="100" class="form-control input-sm" formControlName="Department" />
+            <select class="form-control input-sm" [(ngModel)]="Call.CallStatusID">
+                <option value="0">-- Select One --</option>
+                <option *ngFor="let callStatus of CallStatuses" [value]="callStatus.CallStatusID">{{callStatus.CallStatusDesc}}</option>
+              </select>
           </div>
         </div>
         <div class=" col-md-6">
           <div class="form-group">
             <label class="control-label">Call Category</label>
-            <input type="text" maxlength="100" class="form-control input-sm" formControlName="Department" />
+            <select class="form-control input-sm" [(ngModel)]="Call.CallCategoryID">
+                <option value="0">-- Select One --</option>
+                <option *ngFor="let categories of CallCategories" [value]="categories.CallCategoryID">{{categories.CallCategoryDesc}}</option>
+              </select>
           </div>
         </div>
         <!-- </form> -->
