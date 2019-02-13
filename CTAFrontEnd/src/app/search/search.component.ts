@@ -41,7 +41,7 @@ export class SearchComponent implements OnInit {
 
   getGroupBy() {
     this.data = [
-      { Id: 1, Name: "All" },
+      // { Id: 1, Name: "All" },
       { Id: 2, Name: "Caller Assoc" },
       { Id: 3, Name: "CSR Name" },
       { Id: 4, Name: "Call Status" },
