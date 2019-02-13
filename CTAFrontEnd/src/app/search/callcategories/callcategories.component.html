@@ -1,0 +1,37 @@
+<table *ngFor="let cats of grpCategories" class="table table-responsive-sm ">
+    <thead>
+      <tr>
+        <th>Call Category</th>
+        <th>CSR Name</th>
+        <th>Caller Assoc</th>
+        <th>Call Status</th>
+        <th>Caller Phone</th>
+        <th>Date Of Call</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{cats.CallCategory}}</td>
+      </tr>
+      <tr *ngFor="let d of cats.CallCategoryDetails">
+        <td></td>
+        <td>
+          {{d.CSRName}}
+        </td>
+        <td>
+          {{d.CallerAssoc}}
+        </td>
+        <td>
+          {{d.CallStatus}}
+        </td>
+        <td>
+          {{d.CallerPhone}}
+        </td>
+        <td>
+          {{d.DateOfCall|date :'MM/dd/yyyy'}}
+        </td>
+  
+      </tr>
+    </tbody>
+  </table>
+  

@@ -11,9 +11,10 @@ import {
 } from "../services/myservices";
 import { CallerassocsComponent } from "./callerassocs/callerassocs.component";
 import { CsrnamesComponent } from './csrnames/csrnames.component';
+import { CallcategoriesComponent } from './callcategories/callcategories.component';
 
 @NgModule({
-  declarations: [SearchComponent, CallerassocsComponent, CsrnamesComponent],
+  declarations: [SearchComponent, CallerassocsComponent, CsrnamesComponent, CallcategoriesComponent],
   imports: [CommonModule, RouterModule, FormsModule],
   providers: [
     CallAssocsService,
