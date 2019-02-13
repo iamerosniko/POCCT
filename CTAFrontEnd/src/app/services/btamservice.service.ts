@@ -13,9 +13,9 @@ export class BtamserviceService {
   logIn() {
     this.api.normalHeader();
     //dev-debug mode
-    // this.api.apiUrl=ClientApiSettings.GETCLIENTAPIURL("btamconnection/appsignin/alverer@mfcgd.com")
+    this.api.apiUrl=ClientApiSettings.GETCLIENTAPIURL("btamconnection/appsignin/alverer@mfcgd.com")
     //production - actual mode
-    this.api.apiUrl = ClientApiSettings.GETCLIENTAPIURL("btamconnection/appsignin");
+    // this.api.apiUrl = ClientApiSettings.GETCLIENTAPIURL("btamconnection/appsignin");
     var res = this.api.getAll();
     return res;
   }

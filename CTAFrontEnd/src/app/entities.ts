@@ -50,3 +50,61 @@ export interface CT_CallStatuses {
   CallStatusDesc?: string;
   Active?: boolean;
 }
+
+export interface SearchData {
+  FromDate?: Date;
+  ToDate?: Date;
+  GroupByID?: Number;
+}
+
+export interface GroupCallerAssoc {
+  CallerAssoc ?: string;
+  CallerAssocDetails ?: CallerAssocDetails[];
+}
+
+export interface CallerAssocDetails {
+  CallerPhone?:string;
+  CSRName?:string;
+  DateOfCall?:Date;
+  CallStatus?:string;
+  CallCategory?:string;
+}
+
+export interface GroupCSRName {
+  CSRName?:string;
+  CSRNameDetails?:CSRNameDetails[];
+}
+
+export interface CSRNameDetails {
+  CallerPhone?:string;
+  CallerAssoc?:string;
+  DateOfCall?:Date;
+  CallStatus?:string;
+  CallCategory?:string;
+}
+
+export interface GroupCallStatus {
+  CallStatus?:string;
+  CallStatusDetails?:CallStatusDetails[];
+}
+
+export interface CallStatusDetails {
+  CallerPhone?:string;
+  CallerAssoc?:string;
+  CSRName?:string;
+  DateOfCall?:Date;
+  CallCategory?:string;
+}
+
+export interface GroupCallCategory {
+  CallCategory?:string;
+  CallCategoryDetails?:CallCategoryDetails[];
+}
+
+export interface CallCategoryDetails {
+  CallerPhone?:string;
+  CallerAssoc?:string;
+  CSRName?:string;
+  DateOfCall?:Date;
+  CallStatus?:string;
+}
