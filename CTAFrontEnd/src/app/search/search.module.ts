@@ -12,9 +12,10 @@ import {
 import { CallerassocsComponent } from "./callerassocs/callerassocs.component";
 import { CsrnamesComponent } from './csrnames/csrnames.component';
 import { CallcategoriesComponent } from './callcategories/callcategories.component';
+import { CallstatusesComponent } from './callstatuses/callstatuses.component';
 
 @NgModule({
-  declarations: [SearchComponent, CallerassocsComponent, CsrnamesComponent, CallcategoriesComponent],
+  declarations: [SearchComponent, CallerassocsComponent, CsrnamesComponent, CallcategoriesComponent, CallstatusesComponent],
   imports: [CommonModule, RouterModule, FormsModule],
   providers: [
     CallAssocsService,

@@ -39,8 +39,8 @@
       <div class="tab-content">
         <callerassocs *ngIf="this.groupId==2" [calls]="calls"></callerassocs>
         <csrnames *ngIf="this.groupId==3" [calls]="calls"></csrnames>
-        <callcategories  [calls]="calls"></callcategories>
-      
+        <callstatuses *ngIf="this.groupId==4" [calls]="calls"></callstatuses>
+        <callcategories *ngIf="this.groupId==5" [calls]="calls"></callcategories>
       </div>
     </div>
   </div>

@@ -1,0 +1,37 @@
+<table *ngFor="let status of grpCallStatus" class="table table-responsive-sm ">
+    <thead>
+      <tr>
+        <th>Call Status</th>
+        <th>CSR Name</th>
+        <th>Caller Assoc</th>
+        <th>Call Category</th>
+        <th>Caller Phone</th>
+        <th>Date Of Call</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{status.CallStatus}}</td>
+      </tr>
+      <tr *ngFor="let d of status.CallStatusDetails">
+        <td></td>
+        <td>
+          {{d.CSRName}}
+        </td>
+        <td>
+          {{d.CallerAssoc}}
+        </td>
+        <td>
+          {{d.CallCategory}}
+        </td>
+        <td>
+          {{d.CallerPhone}}
+        </td>
+        <td>
+          {{d.DateOfCall|date :'MM/dd/yyyy'}}
+        </td>
+  
+      </tr>
+    </tbody>
+  </table>
+  
