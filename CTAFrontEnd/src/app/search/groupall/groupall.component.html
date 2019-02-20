@@ -1,0 +1,84 @@
+<table class="table table-responsive-sm">
+  <tr>
+    <td>
+        <table class="table table-responsive-sm ">
+          <thead>
+            <tr>
+              <th>Caller Association</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let assocs of grpCallerAssocs"> 
+              <td>{{assocs.CallerAssoc}}</td>
+              <td>
+                  {{assocs.CallerAssocDetailsTotal}}
+                </td> 
+            </tr>
+            <tr>                         
+            </tr>
+          </tbody>
+        </table>
+    </td>
+    <td>
+        <table class="table table-responsive-sm ">
+          <thead>
+            <tr>
+              <th>CSR Name</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let csr of grpCSRNames"> 
+              <td>{{csr.CSRName}}</td>
+              <td>
+                  {{csr.CSRNameDetailsTotal}}
+                </td> 
+            </tr>
+            <tr>                         
+            </tr>
+          </tbody>
+        </table>
+    </td>
+    <td>
+        <table class="table table-responsive-sm ">
+          <thead>
+            <tr>
+              <th>Call Status</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let status of grpCallStatus" > 
+              <td>{{status.CallStatus}}</td>
+              <td>
+                  {{status.CallStatusDetailsTotal}}
+                </td> 
+            </tr>
+            <tr>                         
+            </tr>
+          </tbody>
+        </table>
+    </td>
+    <td>
+        <table class="table table-responsive-sm ">
+          <thead>
+            <tr>
+              <th>Call Category</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let cats of grpCategories"> 
+              <td>{{cats.CallCategory}}</td>
+              <td>
+                  {{cats.CallCategoryDetailsTotal}}
+                </td> 
+            </tr>
+            <tr>                         
+            </tr>
+          </tbody>
+        </table>
+    </td>
+  </tr>
+</table>

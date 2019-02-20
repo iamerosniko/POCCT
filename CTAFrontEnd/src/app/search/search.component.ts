@@ -14,9 +14,10 @@ export class SearchComponent implements OnInit {
   groupList: any;
   searchData: any;
   groupId: Number;
-  fromDate: Date;
-  toDate: Date;
-  message: any;
+  fromDate: Date = new Date('01/01/2015');
+  toDate: Date = new Date();
+  // startDate: Date = new Date('01/01/2015');
+  // currentDate: Date = new Date();
 
   calls: CT_Calls[] = [];
   constructor(private callsService: CallsService) {
@@ -25,7 +26,7 @@ export class SearchComponent implements OnInit {
 
   async ngOnInit() {
     this.groupList = await this.data;
-    this.calls = <CT_Calls[]>await this.callsService.getCalls();
+    // this.calls = <CT_Calls[]>await this.callsService.getCalls();
   }
 
   async search() {
@@ -41,7 +42,7 @@ export class SearchComponent implements OnInit {
 
   getGroupBy() {
     this.data = [
-      // { Id: 1, Name: "All" },
+      { Id: 1, Name: "All" },
       { Id: 2, Name: "Caller Assoc" },
       { Id: 3, Name: "CSR Name" },
       { Id: 4, Name: "Call Status" },

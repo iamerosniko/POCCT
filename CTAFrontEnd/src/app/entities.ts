@@ -60,6 +60,7 @@ export interface SearchData {
 export interface GroupCallerAssoc {
   CallerAssoc ?: string;
   CallerAssocDetails ?: CallerAssocDetails[];
+  CallerAssocDetailsTotal ?: number;
 }
 
 export interface CallerAssocDetails {
@@ -73,6 +74,7 @@ export interface CallerAssocDetails {
 export interface GroupCSRName {
   CSRName?:string;
   CSRNameDetails?:CSRNameDetails[];
+  CSRNameDetailsTotal ?: number;
 }
 
 export interface CSRNameDetails {
@@ -86,6 +88,7 @@ export interface CSRNameDetails {
 export interface GroupCallStatus {
   CallStatus?:string;
   CallStatusDetails?:CallStatusDetails[];
+  CallStatusDetailsTotal ?: number;
 }
 
 export interface CallStatusDetails {
@@ -99,6 +102,7 @@ export interface CallStatusDetails {
 export interface GroupCallCategory {
   CallCategory?:string;
   CallCategoryDetails?:CallCategoryDetails[];
+  CallCategoryDetailsTotal ?: number;
 }
 
 export interface CallCategoryDetails {

@@ -9,13 +9,15 @@
     <div id="sidebanner" class="col-md-2">
     <!--nav pills-->
     <div class="nav nav-pills nav-stacked"> 
-      <div>
+      <div>        
         <label class="control-label">From Date</label>
-        <input type="date" id="fromDate" (change)="getFromDate($event)" />
+        <input type="text" id="fromDate" (change)="getFromDate($event)" value="{{fromDate | date:'MM/dd/yyyy'}}" />
+        <!-- <input type="text" (ngModelChange)="fromDate=$event" [ngModel]="fromDate | date:'MM/dd/yyyy'" /> -->
       </div>
       <div>
         <label class="control-label">To Date</label>
-        <input type="date" id="toDate" (change)="getToDate($event)" />
+        <!-- <input type="date" id="toDate" (change)="getToDate($event)" value="{{toDate | date:'MM/dd/yyyy'}}" /> -->
+        <input type="text" id="toDate" (change)="getToDate($event)" value="{{toDate | date:'MM/dd/yyyy'}}" />
       </div>
       <div>
         <label class="control-label">Group By</label>
@@ -37,6 +39,7 @@
         <div class="row"> -->
     <div class="col-md-10">
       <div class="tab-content">
+        <groupall *ngIf="this.groupId==1" [calls]="calls" ></groupall>
         <callerassocs *ngIf="this.groupId==2" [calls]="calls"></callerassocs>
         <csrnames *ngIf="this.groupId==3" [calls]="calls"></csrnames>
         <callstatuses *ngIf="this.groupId==4" [calls]="calls"></callstatuses>
